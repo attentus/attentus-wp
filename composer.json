@@ -1,0 +1,83 @@
+{
+  "name": "attentus/attentus-wp",
+  "type": "project",
+  "license": "MIT",
+  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+  "homepage": "https://roots.io/bedrock/",
+  "authors": [
+    {
+      "name": "Kolja Nolte",
+      "email": "nolte@attentus.com",
+      "homepage": "https://www.kolja-nolte.com"
+    }
+  ],
+  "support": {
+    "issues": "https://gitlab.com/attentus/intern/attentus-wp/-/issues",
+    "wiki": "https://gitlab.com/attentus/intern/attentus-wp/-/wikis/home"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "composer/installers": "^1.10",
+    "vlucas/phpdotenv": "^5.3",
+    "oscarotero/env": "dev-master",
+    "roots/bedrock-autoloader": "dev-master",
+    "roots/wordpress": "^5",
+    "roots/wp-config": "dev-master",
+    "roots/wp-password-bcrypt": "dev-master",
+    "roots/soil": "dev-main",
+    "timber/timber": "2.*",
+    "wpackagist-plugin/wordpress-seo": "dev-trunk",
+    "twbs/bootstrap": "~5"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.5.8",
+    "roave/security-advisories": "dev-latest",
+    "wpackagist-plugin/theme-check": "dev-trunk",
+    "wpackagist-plugin/debug-bar": "dev-trunk",
+    "kint-php/kint": "dev-master"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "wordpress-install-dir": "web/wp"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "python ./scripts/post-install.py"
+    ],
+    "post-update-cmd": [
+      "python ./scripts/post-update.py"
+    ],
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\""
+    ],
+    "test": [
+      "phpcs"
+    ]
+  }
+}
