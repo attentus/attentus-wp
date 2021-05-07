@@ -11,8 +11,6 @@
  * @author Kolja Nolte <nolte@attentus.com>
  */
 
-namespace Attentus;
-
 /** Stop executing files when accessing them directly */
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access to theme files is not allowed.' );
