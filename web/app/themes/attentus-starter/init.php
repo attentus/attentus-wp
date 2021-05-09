@@ -18,7 +18,7 @@
  * are compatible with the current version WordPress.
  */
 
-namespace attentus;
+namespace Attentus;
 
 use Timber\Timber;
 use WP_Theme;
@@ -28,9 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access to theme files is not allowed.' );
 }
 
-global $root_dir;
-
-$autoload_path            = $root_dir . '/vendor/autoload.php';
+$autoload_path            = ABSPATH . '/../../vendor/autoload.php';
 $theme                    = new WP_Theme( get_stylesheet_directory(), '/' );
 $default_wp_die_arguments = [
 	'link_text' => 'Report error to the administrator &raquo;',

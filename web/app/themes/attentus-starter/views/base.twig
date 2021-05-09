@@ -1,18 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="{{ site.language }}">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>{{ fn("wp_title") }}</title>
+		<meta charset="{{ site.charset }}">
+		<title>{{ wp_title }}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="manifest" href="site.webmanifest">
+		<link rel="apple-touch-icon" href="icon.png">
+		<meta name="theme-color" content="#fafafa">
 		{{ fn("wp_head") }}
+		{% block head %}
+		{% endblock %}
 	</head>
-	<body>
-		{% block main %}
+	<body class="{{ body_class }}">
+		<nav></nav>
+		<header>
+			{% block header %}
+			{% endblock %}
+		</header>
+		<main>
+			{% block main %}
+			{% endblock %}
+		</main>
+		<footer>
+			{% block footer %}
+			{% endblock %}
+		</footer>
+		{% block foot %}
 		{% endblock %}
-		<footer></footer>
-		{% block footer %}
-		{% endblock %}
-		{{ fn("wp_foot") }}
+		{{ fn("wp_footer") }}
 	</body>
 </html>

@@ -11,7 +11,20 @@
  * @author Kolja Nolte <nolte@attentus.com>
  */
 
+namespace Attentus;
+
+use Timber\Timber;
+
 /** Stop executing files when accessing them directly */
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access to theme files is not allowed.' );
 }
+
+$context          = Timber::context();
+$context["posts"] = Timber::get_posts();
+$templates        = [ "home/home.twig" ];
+
+Timber::render(
+	$templates,
+	$context
+);

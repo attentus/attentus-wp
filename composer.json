@@ -2,8 +2,8 @@
   "name": "attentus/attentus-wp",
   "type": "project",
   "license": "MIT",
-  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
-  "homepage": "https://roots.io/bedrock/",
+  "description": "attentus WP is a Bedrock-based boilerplate for WOrdPress with modern development tools, easier configuration, and an improved folder structure",
+  "homepage": "https://www.attentus.com",
   "authors": [
     {
       "name": "Kolja Nolte",
@@ -26,25 +26,29 @@
     }
   ],
   "require": {
-    "php": ">=7.4",
     "composer/installers": "^1.10",
-    "vlucas/phpdotenv": "^5.3",
     "oscarotero/env": "dev-master",
-    "roots/bedrock-autoloader": "dev-master",
+    "php": ">=7.4",
+    "roots/bedrock-autoloader": "^1.0",
+    "roots/soil": "^4",
     "roots/wordpress": "^5",
     "roots/wp-config": "dev-master",
     "roots/wp-password-bcrypt": "dev-master",
-    "roots/soil": "dev-main",
-    "timber/timber": "2.*",
-    "wpackagist-plugin/wordpress-seo": "dev-trunk",
-    "twbs/bootstrap": "~5"
+    "timber/timber": "^2",
+    "twbs/bootstrap": "^5",
+    "vlucas/phpdotenv": "^5",
+    "wordpress-premium/advanced-custom-fields-pro": "^5.9",
+    "wordpress-premium/backupbuddy": "^8",
+    "wordpress-premium/font-awesome-pro": "dev-master",
+    "wordpress-premium/wpseo-premium": "^16",
+    "wpackagist-plugin/wordpress-seo": "^16"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.5.8",
     "roave/security-advisories": "dev-latest",
     "wpackagist-plugin/theme-check": "dev-trunk",
     "wpackagist-plugin/debug-bar": "dev-trunk",
-    "kint-php/kint": "dev-master"
+    "kint-php/kint": "dev-master",
+    "thaikolja/debug-bar-timber": "dev-master"
   },
   "config": {
     "optimize-autoloader": true,
@@ -55,7 +59,9 @@
   "extra": {
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": [
-        "type:wordpress-muplugin"
+        "type:wordpress-muplugin",
+        "roots/soil",
+        "wordpress-premium/advanced-custom-fields-pro"
       ],
       "web/app/plugins/{$name}/": [
         "type:wordpress-plugin"
@@ -71,10 +77,10 @@
       "python ./scripts/post-install.py"
     ],
     "post-update-cmd": [
-      "python ./scripts/post-update.py"
+      "python3 ./scripts/post-update.py"
     ],
     "post-root-package-install": [
-      "php -r \"copy('.env.example', '.env');\""
+      "python ./scripts/post-install.py"
     ],
     "test": [
       "phpcs"

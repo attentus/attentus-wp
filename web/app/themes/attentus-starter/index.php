@@ -16,12 +16,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access to theme files is not allowed.' );
 }
 
-$context          = Timber::context();
-$context["posts"] = Timber::get_posts();
-$templates        = [ "pages/home.twig" ];
-
-Timber::render(
-	$templates,
-	$context,
-	TIMBER_CACHE_EXPIRATION
-);
+echo __FILE__;

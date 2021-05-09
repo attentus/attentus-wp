@@ -11,6 +11,8 @@
  * @author Kolja Nolte <nolte@attentus.com>
  */
 
+namespace Attentus;
+
 /** Stop executing files when accessing them directly */
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access to theme files is not allowed.' );
@@ -29,4 +31,17 @@ class Site extends \Timber\Site {
 
 	}
 
+	public function add_post_types(): void {
+
+	}
+
+	public function add_taxonomies(): void {
+
+	}
+
+	public function add_theme_support(): void {
+
+	}
 }
+
+new Site();
