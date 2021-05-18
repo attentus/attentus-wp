@@ -10,7 +10,7 @@ theme_directory = prefix + 'web/app/themes/attentus-starter'
 if os.path.exists('vendor/twbs/bootstrap'):
 	print('')
 
-a
+
 subprocess.run(
 	[
 		'wp',
