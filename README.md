@@ -16,5 +16,3 @@ Alles zur Benutzung, Verwaltung, Pflege, Anpassung und Weiterentwicklung findet 
 **attentus WP** ist ein hauseigenes und fortlaufend weiterentwickeltes Produkt von attentus Marketing Kommunikation mbH und unterliegt dessen Lizenzbestimmungen. Leitender Entwickler ist derzeit (Stand Mai 2021) [Kolja Nolte](mailto:nolte@attentus.com).
 
 ## Lizenz
-
-...
