@@ -74,13 +74,13 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "python ./scripts/post-install.py"
+      "python3 ./scripts/post-install.py"
     ],
     "post-update-cmd": [
       "python3 ./scripts/post-update.py"
     ],
     "post-root-package-install": [
-      "python ./scripts/post-install.py"
+      "python3 ./scripts/post-install.py"
     ],
     "test": [
       "phpcs"

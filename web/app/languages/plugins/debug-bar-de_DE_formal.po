@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Debug Bar - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-12-20 00:47:25+0000\n"
+"PO-Revision-Date: 2021-05-17 18:51:34+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -95,10 +95,6 @@ msgstr "Anhang"
 #: panels/class-debug-bar-wp-query.php:34
 msgid "Home"
 msgstr "Startseite"
-
-#: panels/class-debug-bar-wp-query.php:32
-msgid "Front Page"
-msgstr "Frontseite"
 
 #: panels/class-debug-bar-wp-query.php:30
 msgid "Taxonomy"
@@ -297,3 +293,7 @@ msgstr "%1$s ist seit Version %2$s <strong>veraltet</strong>! Benutzen Sie statt
 #. Author URI of the plugin
 msgid "https://wordpress.org/"
 msgstr "https://de.wordpress.org/"
+
+#: panels/class-debug-bar-wp-query.php:32
+msgid "Front Page"
+msgstr "Startseite"
