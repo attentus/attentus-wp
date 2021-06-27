@@ -3,12 +3,7 @@ import shutil
 import distutils
 import sys
 import subprocess
-
-prefix = '../'
-theme_directory = prefix + 'web/app/themes/attentus-starter'
-
-if os.path.exists('vendor/twbs/bootstrap'):
-	print('')
+import functions
 
 
 subprocess.run(

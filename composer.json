@@ -41,7 +41,8 @@
     "wordpress-premium/backupbuddy": "^8",
     "wordpress-premium/font-awesome-pro": "dev-master",
     "wordpress-premium/wpseo-premium": "^16",
-    "wpackagist-plugin/wordpress-seo": "^16"
+    "wpackagist-plugin/wordpress-seo": "^16",
+    "YahnisElsts/plugin-update-checker": "dev-master"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
@@ -74,6 +75,7 @@
   },
   "scripts": {
     "post-install-cmd": [
+      "cp .env.example .env",
       "python3 ./scripts/post-install.py"
     ],
     "post-update-cmd": [
@@ -81,9 +83,6 @@
     ],
     "post-root-package-install": [
       "python3 ./scripts/post-install.py"
-    ],
-    "test": [
-      "phpcs"
     ]
   }
 }
