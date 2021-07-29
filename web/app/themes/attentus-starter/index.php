@@ -16,4 +16,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access to theme files is not allowed.' );
 }
 
-echo __FILE__;

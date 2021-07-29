@@ -28,14 +28,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access to theme files is not allowed.' );
 }
 
-$autoload_path            = ABSPATH . '/../../vendor/autoload.php';
-$theme                    = new WP_Theme( get_stylesheet_directory(), '/' );
+/** Load Composer packages */
+$autoload_path = ABSPATH . '/../../vendor/autoload.php';
+
+/** Theme object */
+$theme = new WP_Theme( get_stylesheet_directory(), '/' );
+
+/** Arguments for default wp_die() calls */
 $default_wp_die_arguments = [
 	'link_text' => 'Report error to the administrator &raquo;',
 	'link_url'  => 'mailto:' . get_bloginfo( 'admin_email' ) . '?subject=' . '[FATAL ERROR]: ' . get_bloginfo( 'name' ) . ' (' . $_ENV['WP_HOME'] . ')',
 	'response'  => 404
 ];
 
+/** Stop if autoload path can't be found and print error message */
 if ( ! file_exists( $autoload_path ) ) {
 	wp_die(
 		'The theme <strong>' . $theme->get( 'Name' ) . '</strong> requires additional dependencies installed through PHP Composer. Please make sure to run <code>composer install</code> and <code>composer update</code>.',
@@ -45,6 +51,7 @@ if ( ! file_exists( $autoload_path ) ) {
 } else {
 	require_once $autoload_path;
 
+	/** Stop if Timber can't be found */
 	if ( ! class_exists( Timber::class ) ) {
 		wp_die(
 			'<strong>' . $theme->get( 'Name' ) . '</strong> could not load <em>Timber</em>. Make sure all Composer dependencies have been installed and are using the set version defined in <code>composer.json</code>.',
@@ -54,6 +61,7 @@ if ( ! file_exists( $autoload_path ) ) {
 	}
 }
 
+/** Initialize Timber and define default directories */
 $timber           = new Timber();
 $timber::$dirname = [ 'pages', 'views' ];
 

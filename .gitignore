@@ -4,6 +4,7 @@ web/app/plugins/*
 web/app/mu-plugins/*/
 web/app/upgrade
 web/app/languages
+web/app/uploads/*backupbuddy*
 
 # WordPress
 web/wp
