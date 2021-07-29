@@ -1,0 +1,38 @@
+<!doctype html>
+<html class="no-js" lang="{{ site.language }}">
+	<head>
+		<meta charset="{{ site.charset }}">
+		<title>{{ wp_title }}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD:web/app/themes/attentus-starter/views/base.twig
+		<link rel="manifest" href="site.webmanifest">
+		<link rel="apple-touch-icon" href="icon.png">
+		<meta name="theme-color" content="#ffffff">
+=======
+		{# <link rel="manifest" href="site.webmanifest"> #} <!-- TODO -->
+		{# <link rel="apple-touch-icon" href="icon.png"> #} <!-- TODO -->
+		<meta name="theme-color" content="#fafafa">
+>>>>>>> origin/master:web/app/themes/attentus/views/base.twig
+		{{ fn('wp_head') }}
+		{% block head %}
+		{% endblock %}
+	</head>
+	<body class="{{ body_class }}">
+		<nav></nav>
+		<header>
+			{% block header %}
+			{% endblock %}
+		</header>
+		<main>
+			{% block main %}
+			{% endblock %}
+		</main>
+		<footer>
+			{% block footer %}
+			{% endblock %}
+		</footer>
+		{% block foot %}
+		{% endblock %}
+		{{ fn('wp_footer') }}
+	</body>
+</html>

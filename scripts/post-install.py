@@ -3,6 +3,11 @@ import shutil
 import distutils
 import sys
 import subprocess
+<<<<<<< HEAD
+=======
+import functions
+
+>>>>>>> origin/master
 
 subprocess.run(
 	[
