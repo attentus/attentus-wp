@@ -41,7 +41,9 @@
         <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.js" />
         <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.min.js" />
         <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/themes/attentus/scripts/js/bootstrap.min.min.js" />
         <item url="file://$PROJECT_DIR$/web/app/themes/attentus/scripts/js/main.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/themes/attentus/scripts/js/main.min.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -84,7 +86,9 @@
       <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.js" />
       <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.min.js" />
       <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/themes/attentus/scripts/js/bootstrap.min.min.js" />
       <root url="file://$PROJECT_DIR$/web/app/themes/attentus/scripts/js/main.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/themes/attentus/scripts/js/main.min.min.js" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
