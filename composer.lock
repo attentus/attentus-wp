@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d9e2c90300b8d2124ef321a2ea9cc13",
+    "content-hash": "735d70dbe8f510bdf0e4bb4e5419a870",
     "packages": [
         {
             "name": "composer/installers",
@@ -284,7 +284,6 @@
         },
         {
             "name": "google/apiclient-services",
-<<<<<<< HEAD
             "version": "v0.205.0",
             "source": {
                 "type": "git",
@@ -295,18 +294,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/75ff6a81838493bb9b5aad0458ebd4226e0c0557",
                 "reference": "75ff6a81838493bb9b5aad0458ebd4226e0c0557",
-=======
-            "version": "v0.201.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "0375af405757b36f3bcc82e19d7daf61e0b4cfd8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/0375af405757b36f3bcc82e19d7daf61e0b4cfd8",
-                "reference": "0375af405757b36f3bcc82e19d7daf61e0b4cfd8",
->>>>>>> origin/master
                 "shasum": ""
             },
             "require": {
@@ -335,15 +322,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-<<<<<<< HEAD
                 "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.205.0"
             },
             "time": "2021-07-24T11:20:23+00:00"
-=======
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.201.0"
-            },
-            "time": "2021-06-18T15:00:35+00:00"
->>>>>>> origin/master
         },
         {
             "name": "google/auth",
@@ -799,7 +780,6 @@
         },
         {
             "name": "microsoft/microsoft-graph",
-<<<<<<< HEAD
             "version": "1.35.1",
             "source": {
                 "type": "git",
@@ -810,18 +790,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/microsoftgraph/msgraph-sdk-php/zipball/263365d55323378f501a919543d6920edf2bd372",
                 "reference": "263365d55323378f501a919543d6920edf2bd372",
-=======
-            "version": "1.34.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/microsoftgraph/msgraph-sdk-php.git",
-                "reference": "5200f368e8b808b93882ebc15847379e51644e18"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/microsoftgraph/msgraph-sdk-php/zipball/5200f368e8b808b93882ebc15847379e51644e18",
-                "reference": "5200f368e8b808b93882ebc15847379e51644e18",
->>>>>>> origin/master
                 "shasum": ""
             },
             "require": {
@@ -857,15 +825,9 @@
             "homepage": "https://developer.microsoft.com/en-us/graph",
             "support": {
                 "issues": "https://github.com/microsoftgraph/msgraph-sdk-php/issues",
-<<<<<<< HEAD
                 "source": "https://github.com/microsoftgraph/msgraph-sdk-php/tree/1.35.1"
             },
             "time": "2021-07-28T10:41:18+00:00"
-=======
-                "source": "https://github.com/microsoftgraph/msgraph-sdk-php/tree/1.34.0"
-            },
-            "time": "2021-06-16T12:08:41+00:00"
->>>>>>> origin/master
         },
         {
             "name": "monolog/monolog",
@@ -1777,34 +1739,28 @@
         },
         {
             "name": "roots/wp-config",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wp-config.git",
-                "reference": "0c08d0219786d4331227c2fcbd12ad2ba633c108"
+                "reference": "37c38230796119fb487fa03346ab0706ce6d4962"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/wp-config/zipball/0c08d0219786d4331227c2fcbd12ad2ba633c108",
-                "reference": "0c08d0219786d4331227c2fcbd12ad2ba633c108",
+                "url": "https://api.github.com/repos/roots/wp-config/zipball/37c38230796119fb487fa03346ab0706ce6d4962",
+                "reference": "37c38230796119fb487fa03346ab0706ce6d4962",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=5.6"
             },
             "require-dev": {
-                "php-coveralls/php-coveralls": "^2.2",
-                "phpunit/phpunit": "^7.5",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^5.7",
                 "roave/security-advisories": "dev-master",
-                "squizlabs/php_codesniffer": "^3.5"
+                "squizlabs/php_codesniffer": "^3.3"
             },
-            "default-branch": true,
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Roots\\WPConfig\\": "src"
@@ -1825,30 +1781,20 @@
                 "issues": "https://github.com/roots/wp-config/issues",
                 "source": "https://github.com/roots/wp-config/tree/master"
             },
-            "funding": [
-                {
-                    "url": "https://github.com/roots",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/rootsdev",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2021-04-29T02:06:35+00:00"
+            "time": "2018-08-10T14:18:38+00:00"
         },
         {
             "name": "roots/wp-password-bcrypt",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wp-password-bcrypt.git",
-                "reference": "fb5bf95245ca5addbad8aadc9c9dd408c4126739"
+                "reference": "5cecd2e98ccc3193443cc5c5db9b3bc7abed5ffa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/wp-password-bcrypt/zipball/fb5bf95245ca5addbad8aadc9c9dd408c4126739",
-                "reference": "fb5bf95245ca5addbad8aadc9c9dd408c4126739",
+                "url": "https://api.github.com/repos/roots/wp-password-bcrypt/zipball/5cecd2e98ccc3193443cc5c5db9b3bc7abed5ffa",
+                "reference": "5cecd2e98ccc3193443cc5c5db9b3bc7abed5ffa",
                 "shasum": ""
             },
             "require": {
@@ -1861,7 +1807,6 @@
                 "phpunit/phpunit": "^4.8.23|^5.2.9",
                 "squizlabs/php_codesniffer": "^2.5.1"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "files": [
@@ -1898,17 +1843,7 @@
                 "issues": "https://github.com/roots/wp-password-bcrypt/issues",
                 "source": "https://github.com/roots/wp-password-bcrypt/tree/master"
             },
-            "funding": [
-                {
-                    "url": "https://github.com/roots",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/rootsdev",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2019-07-15T16:31:23+00:00"
+            "time": "2016-03-01T16:27:06+00:00"
         },
         {
             "name": "stevenmaguire/oauth2-dropbox",
@@ -2301,7 +2236,6 @@
         },
         {
             "name": "symfony/var-dumper",
-<<<<<<< HEAD
             "version": "v5.3.6",
             "source": {
                 "type": "git",
@@ -2312,18 +2246,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/var-dumper/zipball/3dd8ddd1e260e58ecc61bb78da3b6584b3bfcba0",
                 "reference": "3dd8ddd1e260e58ecc61bb78da3b6584b3bfcba0",
-=======
-            "version": "v5.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "905a22c68b292ffb6f20d7636c36b220d1fba5ae"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/905a22c68b292ffb6f20d7636c36b220d1fba5ae",
-                "reference": "905a22c68b292ffb6f20d7636c36b220d1fba5ae",
->>>>>>> origin/master
                 "shasum": ""
             },
             "require": {
@@ -2382,11 +2304,7 @@
                 "dump"
             ],
             "support": {
-<<<<<<< HEAD
                 "source": "https://github.com/symfony/var-dumper/tree/v5.3.6"
-=======
-                "source": "https://github.com/symfony/var-dumper/tree/v5.3.2"
->>>>>>> origin/master
             },
             "funding": [
                 {
@@ -2402,11 +2320,7 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
             "time": "2021-07-27T01:56:02+00:00"
-=======
-            "time": "2021-06-06T09:51:56+00:00"
->>>>>>> origin/master
         },
         {
             "name": "thaikolja/debug-bar-timber",
@@ -2799,7 +2713,6 @@
         },
         {
             "name": "wordpress-premium/advanced-custom-fields-pro",
-<<<<<<< HEAD
             "version": "5.9.9",
             "source": {
                 "type": "git",
@@ -2810,18 +2723,6 @@
                 "type": "zip",
                 "url": "https://gitlab.com/api/v4/projects/wordpress-premium%2Fadvanced-custom-fields-pro/repository/archive.zip?sha=f63ad3775a382bbaf7a67ca4dd19e53baa6ad0f5",
                 "reference": "f63ad3775a382bbaf7a67ca4dd19e53baa6ad0f5",
-=======
-            "version": "5.9.7",
-            "source": {
-                "type": "git",
-                "url": "https://gitlab.com/wordpress-premium/advanced-custom-fields-pro.git",
-                "reference": "3dfbdf8fb196e606a81be9645e21c8ad7e8bd4ad"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/wordpress-premium%2Fadvanced-custom-fields-pro/repository/archive.zip?sha=3dfbdf8fb196e606a81be9645e21c8ad7e8bd4ad",
-                "reference": "3dfbdf8fb196e606a81be9645e21c8ad7e8bd4ad",
->>>>>>> origin/master
                 "shasum": ""
             },
             "require": {
@@ -2838,16 +2739,16 @@
         },
         {
             "name": "wordpress-premium/backupbuddy",
-            "version": "8.7.3.0",
+            "version": "8.7.4.0",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/wordpress-premium/backupbuddy.git",
-                "reference": "deea0cd721fc5eb19c5b1bd1dff404fda21c7f22"
+                "reference": "524a5458f182ed8c4c9d4bfe4b4cd5a7f77aac34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/wordpress-premium%2Fbackupbuddy/repository/archive.zip?sha=deea0cd721fc5eb19c5b1bd1dff404fda21c7f22",
-                "reference": "deea0cd721fc5eb19c5b1bd1dff404fda21c7f22",
+                "url": "https://gitlab.com/api/v4/projects/wordpress-premium%2Fbackupbuddy/repository/archive.zip?sha=524a5458f182ed8c4c9d4bfe4b4cd5a7f77aac34",
+                "reference": "524a5458f182ed8c4c9d4bfe4b4cd5a7f77aac34",
                 "shasum": ""
             },
             "require": {
@@ -2860,14 +2761,14 @@
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPLv3 or later"
+                "GPL-3.0-or-later"
             ],
             "description": "The original 3-in-1 WordPress backup plugin for quick and easy WordPress backups! Restore and move WordPress to a new server or domain, too.",
-            "time": "2021-06-24T00:00:00+00:00"
+            "time": "2021-07-30T20:47:47+00:00"
         },
         {
             "name": "wordpress-premium/font-awesome-pro",
-            "version": "dev-master",
+            "version": "6.0.0-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/wordpress-premium/font-awesome-pro.git",
@@ -2879,7 +2780,6 @@
                 "reference": "85306462266a74e847b38ad192e54fd145469900",
                 "shasum": ""
             },
-            "default-branch": true,
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2909,16 +2809,16 @@
         },
         {
             "name": "wordpress-premium/wpseo-premium",
-            "version": "16.5",
+            "version": "16.8",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/wordpress-premium/wpseo-premium.git",
-                "reference": "09215861cda28b3374ddcdab41b767f3700536d8"
+                "reference": "50f8f78c5f66802f2ef17653724e7b08252d9b74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/wordpress-premium%2Fwpseo-premium/repository/archive.zip?sha=09215861cda28b3374ddcdab41b767f3700536d8",
-                "reference": "09215861cda28b3374ddcdab41b767f3700536d8",
+                "url": "https://gitlab.com/api/v4/projects/wordpress-premium%2Fwpseo-premium/repository/archive.zip?sha=50f8f78c5f66802f2ef17653724e7b08252d9b74",
+                "reference": "50f8f78c5f66802f2ef17653724e7b08252d9b74",
                 "shasum": ""
             },
             "require": {
@@ -2936,11 +2836,10 @@
             "support": {
                 "issues": "https://gitlab.com/api/v4/projects/13303532/issues"
             },
-            "time": "2021-06-15T00:00:00+00:00"
+            "time": "2021-07-30T22:42:00+00:00"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-<<<<<<< HEAD
             "version": "16.8",
             "source": {
                 "type": "svn",
@@ -2950,17 +2849,6 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wordpress-seo.16.8.zip"
-=======
-            "version": "16.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/16.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.16.5.zip"
->>>>>>> origin/master
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2976,21 +2864,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kint-php/kint.git",
-<<<<<<< HEAD
                 "reference": "ee9039e17ff2b4bfcc7529ebde62bc23d328e72d"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/kint-php/kint/zipball/ee9039e17ff2b4bfcc7529ebde62bc23d328e72d",
                 "reference": "ee9039e17ff2b4bfcc7529ebde62bc23d328e72d",
-=======
-                "reference": "913ca16353107dcc47a78361f03c965bb9e10711"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kint-php/kint/zipball/913ca16353107dcc47a78361f03c965bb9e10711",
-                "reference": "913ca16353107dcc47a78361f03c965bb9e10711",
->>>>>>> origin/master
                 "shasum": ""
             },
             "require": {
@@ -3053,11 +2932,7 @@
                 "issues": "https://github.com/kint-php/kint/issues",
                 "source": "https://github.com/kint-php/kint/tree/master"
             },
-<<<<<<< HEAD
             "time": "2021-07-22T11:02:26+00:00"
-=======
-            "time": "2021-06-09T22:40:01+00:00"
->>>>>>> origin/master
         },
         {
             "name": "roave/security-advisories",
@@ -3065,21 +2940,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-<<<<<<< HEAD
                 "reference": "52a126190a36bc9236846f5d42e10bff9ff60d72"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/52a126190a36bc9236846f5d42e10bff9ff60d72",
                 "reference": "52a126190a36bc9236846f5d42e10bff9ff60d72",
-=======
-                "reference": "ac0d045cdd1a9f1c87a0225a1dcda2bfb71be924"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/ac0d045cdd1a9f1c87a0225a1dcda2bfb71be924",
-                "reference": "ac0d045cdd1a9f1c87a0225a1dcda2bfb71be924",
->>>>>>> origin/master
                 "shasum": ""
             },
             "conflict": {
@@ -3114,10 +2980,7 @@
                 "contao/core": ">=2,<3.5.39",
                 "contao/core-bundle": ">=4,<4.4.52|>=4.5,<4.9.16|>=4.10,<4.11.5|= 4.10.0",
                 "contao/listing-bundle": ">=4,<4.4.8",
-<<<<<<< HEAD
                 "craftcms/cms": "<3.6.7",
-=======
->>>>>>> origin/master
                 "croogo/croogo": "<3.0.7",
                 "datadog/dd-trace": ">=0.30,<0.30.2",
                 "david-garcia/phpwhois": "<=4.3.1",
@@ -3174,11 +3037,7 @@
                 "froala/wysiwyg-editor": "<3.2.7",
                 "fuel/core": "<1.8.1",
                 "getgrav/grav": "<=1.7.10",
-<<<<<<< HEAD
                 "getkirby/cms": "<=3.5.6",
-=======
-                "getkirby/cms": "<3.5.4",
->>>>>>> origin/master
                 "getkirby/panel": "<2.5.14",
                 "gos/web-socket-bundle": "<1.10.4|>=2,<2.6.1|>=3,<3.3",
                 "gree/jose": "<=2.2",
@@ -3227,10 +3086,7 @@
                 "neos/swiftmailer": ">=4.1,<4.1.99|>=5.4,<5.4.5",
                 "nette/application": ">=2,<2.0.19|>=2.1,<2.1.13|>=2.2,<2.2.10|>=2.3,<2.3.14|>=2.4,<2.4.16|>=3,<3.0.6",
                 "nette/nette": ">=2,<2.0.19|>=2.1,<2.1.13",
-<<<<<<< HEAD
                 "nilsteampassnet/teampass": "<=2.1.27.36",
-=======
->>>>>>> origin/master
                 "nukeviet/nukeviet": "<4.3.4",
                 "nystudio107/craft-seomatic": "<3.3",
                 "nzo/url-encryptor-bundle": ">=4,<4.3.2|>=5,<5.0.1",
@@ -3318,11 +3174,7 @@
                 "ssddanbrown/bookstack": "<0.29.2",
                 "stormpath/sdk": ">=0,<9.9.99",
                 "studio-42/elfinder": "<2.1.59",
-<<<<<<< HEAD
                 "sulu/sulu": "<1.6.41|>=2,<2.0.10|>=2.1,<2.1.1",
-=======
-                "sulu/sulu": "<1.6.34|>=2,<2.0.10|>=2.1,<2.1.1",
->>>>>>> origin/master
                 "swiftmailer/swiftmailer": ">=4,<5.4.5",
                 "sylius/admin-bundle": ">=1,<1.0.17|>=1.1,<1.1.9|>=1.2,<1.2.2",
                 "sylius/grid": ">=1,<1.1.19|>=1.2,<1.2.18|>=1.3,<1.3.13|>=1.4,<1.4.5|>=1.5,<1.5.1",
@@ -3460,11 +3312,7 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
             "time": "2021-07-26T22:02:34+00:00"
-=======
-            "time": "2021-06-24T09:02:34+00:00"
->>>>>>> origin/master
         },
         {
             "name": "wpackagist-plugin/debug-bar",
@@ -3509,9 +3357,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "oscarotero/env": 20,
-        "roots/wp-config": 20,
-        "roots/wp-password-bcrypt": 20,
-        "wordpress-premium/font-awesome-pro": 20,
         "roave/security-advisories": 20,
         "wpackagist-plugin/theme-check": 20,
         "wpackagist-plugin/debug-bar": 20,

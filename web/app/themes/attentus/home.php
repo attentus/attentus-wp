@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2021 by attentus mbH
+ * Copyright (C) 2021 by attentus GmbH
  * All Rights Reserved
  * https://www.attentus.com
  * info@attentus.com
@@ -8,12 +8,13 @@
  * This source code is proprietary and confidential. Unauthorized
  * copying of this file via any medium is strictly prohibited.
  *
- * @author Kolja Nolte <nolte@attentus.com>
+ * @package attentus WP
+ * @author  Kolja Nolte <nolte@attentus.com>
  */
 
-namespace Attentus;
+namespace attentus\attentus_WP;
 
-use Timber\Timber;
+use Timber;
 
 /** Stop executing files when accessing them directly */
 if ( ! defined( 'ABSPATH' ) ){
@@ -22,12 +23,12 @@ if ( ! defined( 'ABSPATH' ) ){
 
 $context          = Timber::context();
 $context["posts"] = Timber::get_posts();
-$templates        = [ "home/home.twig" ];
+$templates        = [ "home/view.twig" ];
 
 Timber::render(
 	$templates,
-	$context
-
+	$context,
+	TIMBER_CACHE_TIMEOUT
 );
 
 

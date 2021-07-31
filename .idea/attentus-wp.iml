@@ -15,9 +15,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/graham-campbell/result-type" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kint-php/kint" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/timber/timber" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/twig/cache-extension" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twbs/bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/google/apiclient" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/google/auth" />
@@ -43,6 +40,19 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/thaikolja/debug-bar-timber" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/twig/cache-extension" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/timber/timber" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/mu-plugins/advanced-custom-fields-pro" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/mu-plugins/soil" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/plugins/backupbuddy" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/plugins/debug-bar" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/plugins/theme-check" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/plugins/wordpress-seo" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/plugins/wpseo-premium" />
+      <excludeFolder url="file://$MODULE_DIR$/web/app/upgrade" />
+      <excludeFolder url="file://$MODULE_DIR$/web/wp" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

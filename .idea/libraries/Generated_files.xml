@@ -2,10 +2,88 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-field-group.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-field-group.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-field-group.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-field-group.min.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-input.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-input.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-input.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-input.min.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf.min.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-blocks.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-blocks.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-blocks.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-blocks.min.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-field-group.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-field-group.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-field-group.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-field-group.min.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-input.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-input.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-input.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-input.min.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/3/select2.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/3/select2.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/3/select2.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/3/select2.min.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/4/select2.full.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/4/select2.full.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/4/select2.full.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/4/select2.full.min.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/4/select2.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/4/select2.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/4/select2.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.min.min.js" />
         <item url="file://$PROJECT_DIR$/web/app/themes/attentus/scripts/js/main.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-field-group.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-field-group.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-field-group.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-field-group.min.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-input.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-input.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-input.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf-input.min.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/acf.min.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-blocks.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-blocks.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-blocks.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-blocks.min.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-field-group.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-field-group.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-field-group.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-field-group.min.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-input.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-input.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-input.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/build/js/pro/acf-pro-input.min.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/3/select2.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/3/select2.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/3/select2.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/3/select2.min.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/4/select2.full.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/4/select2.full.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/4/select2.full.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/4/select2.full.min.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/4/select2.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/4/select2.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/select2/4/select2.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.min.min.js" />
       <root url="file://$PROJECT_DIR$/web/app/themes/attentus/scripts/js/main.min.js" />
     </CLASSES>
     <JAVADOC />

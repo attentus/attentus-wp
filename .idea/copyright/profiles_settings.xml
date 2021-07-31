@@ -1,7 +1,7 @@
 <component name="CopyrightManager">
-  <settings default="attentus mbH">
+  <settings default="attentus GmbH">
     <module2copyright>
-      <element module="All" copyright="attentus mbH" />
+      <element module="All" copyright="attentus GmbH" />
     </module2copyright>
     <LanguageOptions name="PHP">
       <option name="fileTypeOverride" value="3" />

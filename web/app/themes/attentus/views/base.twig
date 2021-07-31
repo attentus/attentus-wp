@@ -2,22 +2,21 @@
 <html class="no-js" lang="{{ site.language }}">
 	<head>
 		<meta charset="{{ site.charset }}">
-		<title>{{ wp_title }}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD:web/app/themes/attentus-starter/views/base.twig
 		<link rel="manifest" href="site.webmanifest">
 		<link rel="apple-touch-icon" href="icon.png">
 		<meta name="theme-color" content="#ffffff">
-=======
 		{# <link rel="manifest" href="site.webmanifest"> #} <!-- TODO -->
 		{# <link rel="apple-touch-icon" href="icon.png"> #} <!-- TODO -->
-		<meta name="theme-color" content="#fafafa">
->>>>>>> origin/master:web/app/themes/attentus/views/base.twig
+		<script type="text/javascript">
+		  const ajax_url = '{{ ajax_url }}';
+		</script>
 		{{ fn('wp_head') }}
 		{% block head %}
 		{% endblock %}
 	</head>
-	<body class="{{ body_class }}">
+	<body class="{{ body_class }}{{ extra_body_class }}">
+		{{ fn('wp_body_open') }}
 		<nav></nav>
 		<header>
 			{% block header %}
@@ -31,8 +30,6 @@
 			{% block footer %}
 			{% endblock %}
 		</footer>
-		{% block foot %}
-		{% endblock %}
 		{{ fn('wp_footer') }}
 	</body>
 </html>

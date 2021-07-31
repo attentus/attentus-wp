@@ -3,11 +3,7 @@ import shutil
 import distutils
 import sys
 import subprocess
-<<<<<<< HEAD
-=======
 import functions
-
->>>>>>> origin/master
 
 subprocess.run(
 	[
@@ -57,4 +53,24 @@ subprocess.run(
 		'time_format',
 		'H:i'
 	]
+)
+
+subprocess.run(
+    [
+        'wp',
+        'option',
+        'update',
+        'uploads_use_yearmonth_folders',
+        '0'
+    ]
+)
+
+subprocess.run(
+    [
+        'wp',
+        'option',
+        'update',
+        'permalink_structure',
+        '/%postname%/'
+    ]
 )

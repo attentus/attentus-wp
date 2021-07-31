@@ -1,5 +1,5 @@
-/**
- * Copyright (C) 2021 by attentus mbH
+/*
+ * Copyright (C) 2021 by attentus GmbH
  * All Rights Reserved
  * https://www.attentus.com
  * info@attentus.com
@@ -7,18 +7,22 @@
  * This source code is proprietary and confidential. Unauthorized
  * copying of this file via any medium is strictly prohibited.
  *
+ * @package attentus WP
  * @author Kolja Nolte <nolte@attentus.com>
  */
 
 /**
  * Theme Name:          attentus
- * Theme URI:           https://www.attentus.com/leistungen/
- * Author:              Kolja Nolte <nolte@attentus.com>
- * Author URI:          https://www.kolja-nolte.com
- * Description:         Ein WordPress Boilerplate basierend of Bedrock und mit Twig-Unterstützung durch Timber.
- * License:             GNU General Public License v2 or later
- * License URI:         http://www.gnu.org/licenses/gpl-2.0.html
+ * Theme URI:           https://www.attentus.com
+ * Author:              attentus / Kolja Nolte
+ * Author URI:          mailto:nolte@attentus.com
+ * Description:         Ein WordPress Boilerplate basierend auf Bedrock mit PHP Composer und mit Twig-Unterstützung durch Timber
+ * License:             GNU General Public License v3
+ * License URI:         https://www.gnu.org/licenses/gpl-3.0.en.html
  * Version:             0.0.1
- * Tags:                private
+ * Requires PHP:        7.4
+ * Tested up to:        5.8
+ * Tags:                theme-options
  * Text Domain:         attentus
  */
+

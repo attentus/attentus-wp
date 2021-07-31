@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2021 by attentus mbH
+ * Copyright (C) 2021 by attentus GmbH
  * All Rights Reserved
  * https://www.attentus.com
  * info@attentus.com
@@ -8,7 +8,8 @@
  * This source code is proprietary and confidential. Unauthorized
  * copying of this file via any medium is strictly prohibited.
  *
- * @author Kolja Nolte <nolte@attentus.com>
+ * @package attentus WP
+ * @author  Kolja Nolte <nolte@attentus.com>
  */
 
 /**
@@ -18,15 +19,20 @@
  * are compatible with the current version WordPress.
  */
 
-namespace Attentus;
+namespace attentus\attentus_WP;
 
 use Timber\Timber;
 use WP_Theme;
+use function Env\env;
 
 /** Stop executing files when accessing them directly */
 if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
 }
+
+define( 'TEXTDOMAIN', env( 'WP_TEXTDOMAIN' ) );
+
+const TIMBER_CACHE_TIMEOUT = 1;
 
 /** Load Composer packages */
 $autoload_path = ABSPATH . '/../../vendor/autoload.php';
@@ -37,32 +43,32 @@ $theme = new WP_Theme( get_stylesheet_directory(), '/' );
 /** Arguments for default wp_die() calls */
 $default_wp_die_arguments = [
 	'link_text' => 'Report error to the administrator &raquo;',
-	'link_url'  => 'mailto:' . get_bloginfo( 'admin_email' ) . '?subject=' . '[FATAL ERROR]: ' . get_bloginfo( 'name' ) . ' (' . $_ENV['WP_HOME'] . ')',
+	'link_url'  => 'mailto:' . get_bloginfo(
+			'admin_email'
+		) . '?subject=' . '[FATAL ERROR]: ' . get_bloginfo(
+		               'name'
+	               ) . ' (' . $_ENV['WP_HOME'] . ')',
 	'response'  => 404
 ];
 
-<<<<<<< HEAD:web/app/themes/attentus-starter/init.php
 /** Stop if autoload path can't be found and print error message */
-if ( ! file_exists( $autoload_path ) ) {
-=======
 if ( ! file_exists( $autoload_path ) ){
->>>>>>> origin/master:web/app/themes/attentus/init.php
 	wp_die(
-		'The theme <strong>' . $theme->get( 'Name' ) . '</strong> requires additional dependencies installed through PHP Composer. Please make sure to run <code>composer install</code> and <code>composer update</code>.',
+		'The theme <strong>' . $theme->get(
+			'Name'
+		) . '</strong> requires additional dependencies installed through PHP Composer. Please make sure to run <code>composer install</code> and <code>composer update</code>.',
 		'[FATAL ERROR]: Could not find autoload.php',
 		$default_wp_die_arguments
 	);
 } else {
 	require_once $autoload_path;
 
-<<<<<<< HEAD:web/app/themes/attentus-starter/init.php
 	/** Stop if Timber can't be found */
-	if ( ! class_exists( Timber::class ) ) {
-=======
 	if ( ! class_exists( Timber::class ) ){
->>>>>>> origin/master:web/app/themes/attentus/init.php
 		wp_die(
-			'<strong>' . $theme->get( 'Name' ) . '</strong> could not load <em>Timber</em>. Make sure all Composer dependencies have been installed and are using the set version defined in <code>composer.json</code>.',
+			'<strong>' . $theme->get(
+				'Name'
+			) . '</strong> could not load <em>Timber</em>. Make sure all Composer dependencies have been installed and are using the set version defined in <code>composer.json</code>.',
 			'[FATAL ERROR]: Could not load Timber',
 			$default_wp_die_arguments
 		);
@@ -105,4 +111,8 @@ foreach ( $include_directories as $include_directory ) {
 		/** Include current file */
 		get_template_part( $include_file );
 	}
+}
+
+if ( ! isset( $content_width ) ){
+	$content_width = 1140;
 }

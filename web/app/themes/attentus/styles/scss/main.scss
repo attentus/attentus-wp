@@ -1,5 +1,5 @@
 /*!
- * Copyright (C) 2021 by attentus mbH
+ * Copyright (C) 2021 by attentus GmbH
  * All Rights Reserved
  * https://www.attentus.com
  * info@attentus.com
@@ -7,12 +7,38 @@
  * This source code is proprietary and confidential. Unauthorized
  * copying of this file via any medium is strictly prohibited.
  *
+ * @package attentus WP
  * @author Kolja Nolte <nolte@attentus.com>
  */
 
-@import 'partials/responsive-helper';
-@import '../../pages/home/style';
 @import 'bootstrap/bootstrap';
+@import 'responsive-helper';
+@import '../../pages/home/style';
+@import '../../pages/404/style';
+@import '../../pages/archive/style';
+@import '../../pages/single/style';
+@import '../../pages/page/style';
+@import '../../pages/search/style';
 
 body {
+}
+
+.aligncenter {
+	text-align: center;
+	margin:     0 auto;
+}
+
+.alignleft {
+	text-align: left;
+}
+
+.alignrightr {
+	text-align: right;
+}
+
+.wp-caption,
+.wp-caption-text,
+.gallery-caption,
+.bypostauthor,
+.screen-reader-text {
 }

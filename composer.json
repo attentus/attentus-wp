@@ -2,7 +2,7 @@
   "name": "attentus/attentus-wp",
   "type": "project",
   "license": "MIT",
-  "description": "attentus WP is a Bedrock-based boilerplate for WOrdPress with modern development tools, easier configuration, and an improved folder structure",
+  "description": "attentus WP is a Bedrock-based boilerplate for WordPress with modern development tools, easier configuration, and an improved folder structure",
   "homepage": "https://www.attentus.com",
   "authors": [
     {
@@ -26,23 +26,23 @@
     }
   ],
   "require": {
-    "composer/installers": "^1.10",
+    "composer/installers": "^1.11",
     "oscarotero/env": "dev-master",
     "php": ">=7.4",
     "roots/bedrock-autoloader": "^1.0",
     "roots/soil": "^4",
     "roots/wordpress": "^5",
-    "roots/wp-config": "dev-master",
-    "roots/wp-password-bcrypt": "dev-master",
+    "roots/wp-config": "^1.0",
+    "roots/wp-password-bcrypt": "^1.0",
     "timber/timber": "^2",
     "twbs/bootstrap": "^5",
     "vlucas/phpdotenv": "^5",
-    "wordpress-premium/advanced-custom-fields-pro": "^5.9",
+    "wordpress-premium/advanced-custom-fields-pro": "^5",
     "wordpress-premium/backupbuddy": "^8",
-    "wordpress-premium/font-awesome-pro": "dev-master",
+    "wordpress-premium/font-awesome-pro": "^6",
     "wordpress-premium/wpseo-premium": "^16",
     "wpackagist-plugin/wordpress-seo": "^16",
-    "YahnisElsts/plugin-update-checker": "dev-master"
+    "upstatement/jigsaw": "^0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
@@ -75,8 +75,8 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "cp .env.example .env",
-      "python3 ./scripts/post-install.py"
+      "python3 ./scripts/post-install.py",
+      "cp -n .env.example .env"
     ],
     "post-update-cmd": [
       "python3 ./scripts/post-update.py"

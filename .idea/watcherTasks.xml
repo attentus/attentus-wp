@@ -22,7 +22,7 @@
       <envs />
     </TaskOptions>
     <TaskOptions isEnabled="true">
-      <option name="arguments" value="--style compressed --no-cache -r sass-globbing $FilePath$:$FileParentDir$/css/$FileNameWithoutAllExtensions$.min.css" />
+      <option name="arguments" value="--style compressed --no-cache $FilePath$:../css/$FileNameWithoutAllExtensions$.min.css" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" />
       <option name="exitCodeBehavior" value="ERROR" />
