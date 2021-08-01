@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebResourcesPaths">
+    <contentEntries>
+      <entry url="file://$PROJECT_DIR$">
+        <entryData>
+          <resourceRoots>
+            <path value="file://$PROJECT_DIR$/vendor" />
+            <path value="file://$PROJECT_DIR$/vendor/composer" />
+            <path value="file://$PROJECT_DIR$/vendor/bin" />
+            <path value="file://$PROJECT_DIR$/vendor/firebase" />
+            <path value="file://$PROJECT_DIR$/vendor/google" />
+            <path value="file://$PROJECT_DIR$/vendor/graham-campbell" />
+            <path value="file://$PROJECT_DIR$/vendor/guzzlehttp" />
+            <path value="file://$PROJECT_DIR$/vendor/kint-php" />
+            <path value="file://$PROJECT_DIR$/vendor/krizalys" />
+            <path value="file://$PROJECT_DIR$/vendor/league" />
+            <path value="file://$PROJECT_DIR$/vendor/microsoft" />
+            <path value="file://$PROJECT_DIR$/vendor/monolog" />
+            <path value="file://$PROJECT_DIR$/vendor/oscarotero" />
+            <path value="file://$PROJECT_DIR$/vendor/paragonie" />
+            <path value="file://$PROJECT_DIR$/vendor/phpoption" />
+            <path value="file://$PROJECT_DIR$/vendor/phpseclib" />
+            <path value="file://$PROJECT_DIR$/vendor/psr" />
+            <path value="file://$PROJECT_DIR$/vendor/ralouphie" />
+            <path value="file://$PROJECT_DIR$/vendor/roots" />
+            <path value="file://$PROJECT_DIR$/vendor/stevenmaguire" />
+            <path value="file://$PROJECT_DIR$/vendor/symfony" />
+            <path value="file://$PROJECT_DIR$/vendor/thaikolja" />
+            <path value="file://$PROJECT_DIR$/vendor/timber" />
+            <path value="file://$PROJECT_DIR$/vendor/twbs" />
+            <path value="file://$PROJECT_DIR$/vendor/twig" />
+            <path value="file://$PROJECT_DIR$/vendor/vlucas" />
+            <path value="file://$PROJECT_DIR$/vendor/wordpress-premium" />
+            <path value="file://$PROJECT_DIR$/vendor/wpackagist-plugin" />
+          </resourceRoots>
+        </entryData>
+      </entry>
+    </contentEntries>
+  </component>
+</project>

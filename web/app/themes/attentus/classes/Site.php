@@ -77,7 +77,7 @@ class Site extends \Timber\Site {
 				'page_title'  => __( 'attentus WP', TEXTDOMAIN ),
 				'menu_title'  => __( 'attentus WP', TEXTDOMAIN ),
 				'parent_slug' => 'themes.php',
-				'redirect'    => true
+				'redirect'    => false
 			] );
 		}
 	}
