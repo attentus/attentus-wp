@@ -6,7 +6,7 @@
 	{% else %}
 		{% set date = post.date %}
 	{% endif %}
-	<time datetime="{{ meta_date }}" title="{{ post.date("Y-m-d H:i") }}">
+	<time datetime="{{ meta_date }}" title="{{ post.date('Y-m-d H:i') }}">
 		{{ date }}
 	</time>
 {% endmacro html_date %}
