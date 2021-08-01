@@ -15,6 +15,7 @@
 namespace attentus\attentus_WP;
 
 use Timber;
+use Twig\TwigFilter;
 use Twig\TwigFunction;
 
 /** Stop executing files when accessing them directly */
@@ -24,20 +25,10 @@ if ( ! defined( 'ABSPATH' ) ){
 
 class Twig extends \Timber\Twig {
 	public function __construct() {
-
 		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
 		add_filter( 'timber/twig', [ $this, 'add_twig_filters' ] );
 		add_filter( 'timber/twig', [ $this, 'add_twig_functions' ] );
 		add_filter( 'timber/post/classmap', [ $this, 'edit_post_class_map' ] );
-
-		add_filter( 'timber/twig/environment/options', function ( $options ) {
-			global $root_dir;
-
-			$options['cache'] = $root_dir . '/web/app/cache';
-			//$options['auto_reload'] = true;
-
-			return $options;
-		} );
 	}
 
 	/**
@@ -79,10 +70,30 @@ class Twig extends \Timber\Twig {
 			new TwigFilter( 'edit_post_link', [ $this, 'twig_filter_edit_post_link' ] )
 		);*/
 
+		$twig->addFilter(
+			new TwigFilter( 'json_decode', [ $this, 'twig_filter_json_decode' ] )
+		);
+
 		return $twig;
 	}
 
+	/**
+	 * @param string $json
+	 *
+	 * @return array
+	 * @throws \JsonException
+	 *
+	 * @since 0.0.1
+	 */
+	public function twig_filter_json_decode( string $json ): array {
+		return json_decode( $json, true, 512, JSON_THROW_ON_ERROR );
+	}
+
 	public function add_twig_functions( $twig ): object {
+		$twig->addFunction(
+			new TwigFunction( 'log', [ $this, 'twig_function_log' ] )
+		);
+
 		$twig->addFunction(
 			new TwigFunction( 'd', [ $this, 'twig_function_d' ] )
 		);
@@ -94,7 +105,20 @@ class Twig extends \Timber\Twig {
 		return $twig;
 	}
 
-	public function twig_function_taxonomy( $taxonomy ) {
+	/**
+	 * @param string $text The text that is to be logged
+	 * @param string $type Log type (warning|error)
+	 */
+	public function twig_function_log( string $text, string $type = 'warnings' ): void {
+		error_log( trim( $text ) );
+	}
+
+	/**
+	 * @param $taxonomy
+	 *
+	 * @return object
+	 */
+	public function twig_function_taxonomy( $taxonomy ): object {
 		return new Taxonomy( $taxonomy );
 	}
 

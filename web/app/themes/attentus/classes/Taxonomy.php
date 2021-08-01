@@ -35,7 +35,7 @@ class Taxonomy {
 	/**
 	 * Constructor.
 	 *
-	 * @param $taxonomy
+	 * @param string|object $taxonomy
 	 */
 	public function __construct( $taxonomy ) {
 		if ( is_string( $taxonomy ) ){

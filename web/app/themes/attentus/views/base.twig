@@ -3,11 +3,7 @@
 	<head>
 		<meta charset="{{ site.charset }}">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="manifest" href="site.webmanifest">
-		<link rel="apple-touch-icon" href="icon.png">
 		<meta name="theme-color" content="#ffffff">
-		{# <link rel="manifest" href="site.webmanifest"> #} <!-- TODO -->
-		{# <link rel="apple-touch-icon" href="icon.png"> #} <!-- TODO -->
 		<script type="text/javascript">
 		  const ajax_url = '{{ ajax_url }}';
 		</script>
@@ -33,3 +29,4 @@
 		{{ fn('wp_footer') }}
 	</body>
 </html>
+{{ flush }}

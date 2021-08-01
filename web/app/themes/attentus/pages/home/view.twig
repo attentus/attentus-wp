@@ -1,5 +1,8 @@
+{% import 'macros.twig' as macros %}
 {% extends "views/base.twig" %}
 {% block main %}
-	{{ macros.read_more_link('123') }}
-
+	{{ macros.html_date(Post(2)) }}
+	{% set items = {'linky': 'https://www.kolja-nolte.com'} %}
+	{{ '{"linky":"https:\/\/www.kolja-nolte.com"}'|json_decode|join(',') }}
+	{{ macros.dropdown_button('Click me', items) }}
 {% endblock %}

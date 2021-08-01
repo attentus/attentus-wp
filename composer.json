@@ -40,7 +40,9 @@
     "wordpress-premium/advanced-custom-fields-pro": "^5",
     "wordpress-premium/font-awesome-pro": "^6",
     "wordpress-premium/wpseo-premium": "^16",
-    "wpackagist-plugin/jigsaw": "0.9.*"
+    "wpackagist-plugin/jigsaw": "0.9.*",
+    "twig/html-extra": "^3.3",
+    "ext-json": "*"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

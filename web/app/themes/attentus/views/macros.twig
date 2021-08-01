@@ -1,3 +1,51 @@
-{% macro read_more_link(post_id) %}
-	ID: {{ post_id }}
-{% endmacro read_more_link %}
+{# Displays a post's dat as HTML #}
+{% macro html_date(post, time_ago = false) %}
+	{% set meta_date = post.date('Y-m-d\\TH:i:s') %}
+	{% if time_ago == true %}
+		{% set date = post.date|time_ago %}
+	{% else %}
+		{% set date = post.date %}
+	{% endif %}
+	<time datetime="{{ meta_date }}" title="{{ post.date("Y-m-d H:i") }}">
+		{{ date }}
+	</time>
+{% endmacro html_date %}
+
+{# Displays a post's thumbnai as HTML #}
+{% macro html_thumbnail(post, width, height, classes = 'img-fluid', linked = false) %}
+	{% set thumbnail      = post.thumbnail %}
+	{% set thumbnail_url  = thumbnail.src|default(site.theme.link ~ '/images/image-not-available.jpg')|towebp(width, height) %}
+	{% set image_alt      = thumbnail.alt|default(thumbnail.name|default(thumbnail.title)) %}
+	{% if linked %}
+		<a href="{{ post.link }}">
+	{% endif %}
+	<img class="{{ classes|escape }}" src="{{ thumbnail_url }}" alt="{{ image_alt|escape }}" srcset="{{ thumbnail.srcset }}" width="{{ width }}" height="{{ height }}">
+	{% if linked %}
+		</a>
+	{% endif %}
+{% endmacro html_thumbnail %}
+
+{# Displays a Bootstrap 5 dropdown button #}
+{% macro dropdown_button(text, items, btn_class = '', id = '') %}
+	{% if not btn_class %}
+		{% set btn_class = btn_class|default('secondary') %}
+	{% endif %}
+	{% if not id %}
+		{% set number = random(1, 25) %}
+		{% set id = 'dropdown-' ~ number %}
+	{% endif %}
+	<div class="dropdown">
+		<button class="btn btn-{{ btn_class }} dropdown-toggle" type="button" id="{{ id }}" data-bs-toggle="dropdown" aria-expanded="false">
+			{{ text }}
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="{{ id }}">
+			{% for label, url in items %}
+				<li>
+					<a class="dropdown-item" href="{{ url|escape }}">
+						{{ label }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endmacro dropdown_button %}

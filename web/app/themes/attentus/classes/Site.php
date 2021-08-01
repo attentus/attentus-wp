@@ -39,6 +39,19 @@ class Site extends Timber\Site {
 		add_action( 'after_setup_theme', [ $this, 'extend_users_table' ] );
 		add_action( 'after_setup_theme', [ $this, 'admin_notices' ] );
 		add_action( 'admin_menu', [ $this, 'remove_admin_pages' ] );
+
+		add_filter( 'timber/loader/twig', [ $this, 'add_twig_globals' ] );
+	}
+
+	/**
+	 * @param $twig
+	 *
+	 * @return object
+	 */
+	public function add_twig_globals( $twig ): object {
+		$twig->addGlobal( 'site', $this );
+
+		return (object) $twig;
 	}
 
 	/**

@@ -74,3 +74,12 @@ subprocess.run(
         '/%postname%/'
     ]
 )
+
+subprocess.run(
+    [
+        'wp',
+        'theme',
+        'activate',
+        'attentus'
+    ]
+)
