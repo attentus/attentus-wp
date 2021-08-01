@@ -14,27 +14,88 @@
 
 namespace attentus\attentus_WP;
 
+use Jigsaw;
+use Timber;
+
 /** Stop executing files when accessing them directly */
 if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
 }
 
-class Site extends \Timber\Site {
-	/** @var string $version */
-	public string $version = '1.0.0';
+class Site extends Timber\Site {
+	/** @var string $version The theme's version, alias of $this->theme->version */
+	public string $version;
 
 	public function __construct() {
 		parent::__construct();
 
-		$this->version = $this->theme->version;
+		$this->version = $this->theme->version ?: '1.0.0';
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'add_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'add_scripts' ] );
 		add_action( 'after_setup_theme', [ $this, 'add_theme_support' ] );
 		add_action( 'after_setup_theme', [ $this, 'add_acf_options_pages' ] );
 		add_action( 'admin_menu', [ $this, 'remove_admin_pages' ] );
+		add_action( 'after_setup_theme', [ $this, 'extend_admin_toolbar' ] );
+		add_action( 'after_setup_theme', [ $this, 'extend_users_table' ] );
 	}
 
+	/**
+	 * Adds the registration date of a user
+	 * to the overview table.
+	 *
+	 * @sincee 0.0.1
+	 */
+	public function extend_users_table(): void {
+		if ( ! class_exists( 'Jigsaw' ) ){
+			return;
+		}
+
+		Jigsaw::add_user_column(
+			__( 'Registriert', TEXTDOMAIN ),
+			function ( $user_id ) {
+				$user = Timber::get_user( $user_id );
+				$time = mktime( $user->user_registered_ );
+				$date = date(
+					'j. M Y, H:i',
+					$time
+				);
+
+				echo esc_html( trim( $date ) );
+			},
+			5
+		);
+	}
+
+	/**
+	 * Extends the admin toolbar.
+	 *
+	 * @since 0.0.1
+	 */
+	public function extend_admin_toolbar(): void {
+		if ( ! class_exists( 'Jigsaw' ) ){
+			return;
+		}
+
+		$optionOne         = new \stdClass();
+		$optionOne->label  = 'Timber-Cache leeren';
+		$optionOne->action = function () {
+			global $root_dir;
+
+			$loader = new Timber\Loader();
+			$loader->clear_cache_twig();
+
+			if ( is_dir( $root_dir . '/web/app/cache' ) ){
+				rrmdir( $root_dir . '/web/app/cache' );
+			}
+		};
+
+		Jigsaw::add_toolbar_group( 'Schnellaktionen', [ $optionOne ] );
+	}
+
+	/**
+	 * @since 0.0.1
+	 */
 	public function add_styles(): void {
 		$css_directory_url = $this->theme->link() . '/styles/css';
 
@@ -53,6 +114,9 @@ class Site extends \Timber\Site {
 		);
 	}
 
+	/**
+	 * @since 0.0.1
+	 */
 	public function add_scripts(): void {
 		$js_directory_url = $this->theme->link() . '/scripts/js';
 
@@ -71,25 +135,39 @@ class Site extends \Timber\Site {
 		);
 	}
 
-	public function add_acf_options_pages() {
-		if ( function_exists( 'acf_add_options_page' ) ){
-			acf_add_options_page( [
-				'page_title'  => __( 'attentus WP', TEXTDOMAIN ),
-				'menu_title'  => __( 'attentus WP', TEXTDOMAIN ),
-				'parent_slug' => 'themes.php',
-				'redirect'    => false
-			] );
+	/**
+	 * @since 0.0.1
+	 */
+	public function add_acf_options_pages(): void {
+		if ( ! function_exists( 'acf_add_options_page' ) ){
+			return;
 		}
+
+		acf_add_options_page( [
+			'page_title'  => __( 'attentus WP', TEXTDOMAIN ),
+			'menu_title'  => __( 'attentus WP', TEXTDOMAIN ),
+			'parent_slug' => 'themes.php',
+			'redirect'    => false
+		] );
 	}
 
+	/**
+	 * @since 0.0.1
+	 */
 	public function add_post_types(): void {
 
 	}
 
+	/**
+	 * @since 0.0.1
+	 */
 	public function add_taxonomies(): void {
 
 	}
 
+	/**
+	 * @since 0.0.1
+	 */
 	public function add_theme_support(): void {
 		add_theme_support( 'soil', [
 			'clean-up',
@@ -126,11 +204,11 @@ class Site extends \Timber\Site {
 		add_theme_support( "custom-background", [] );
 	}
 
-	public function remove_admin_pages() {
-		$admin_pages = [
-			'edit-comments.php',
-			'edit.php'
-		];
+	/**
+	 * @since 0.0.1
+	 */
+	public function remove_admin_pages(): void {
+		$admin_pages = get_field( 'removed_admin_pages', 'options' );
 
 		foreach ( $admin_pages as $admin_page ) {
 			remove_menu_page( $admin_page );

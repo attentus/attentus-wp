@@ -16,7 +16,6 @@ namespace attentus\attentus_WP;
 
 use Timber;
 use Twig\TwigFunction;
-use WP_Taxonomy;
 
 /** Stop executing files when accessing them directly */
 if ( ! defined( 'ABSPATH' ) ){
@@ -25,10 +24,20 @@ if ( ! defined( 'ABSPATH' ) ){
 
 class Twig extends \Timber\Twig {
 	public function __construct() {
+
 		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
 		add_filter( 'timber/twig', [ $this, 'add_twig_filters' ] );
 		add_filter( 'timber/twig', [ $this, 'add_twig_functions' ] );
 		add_filter( 'timber/post/classmap', [ $this, 'edit_post_class_map' ] );
+
+		add_filter( 'timber/twig/environment/options', function ( $options ) {
+			global $root_dir;
+
+			$options['cache'] = $root_dir . '/web/app/cache';
+			//$options['auto_reload'] = true;
+
+			return $options;
+		} );
 	}
 
 	/**

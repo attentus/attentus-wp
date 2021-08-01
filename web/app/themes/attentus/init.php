@@ -45,9 +45,9 @@ $default_wp_die_arguments = [
 	'link_text' => 'Report error to the administrator &raquo;',
 	'link_url'  => 'mailto:' . get_bloginfo(
 			'admin_email'
-		) . '?subject=' . '[FATAL ERROR]: ' . get_bloginfo(
+		) . '?subject=' . 'ERROR: ' . get_bloginfo(
 		               'name'
-	               ) . ' (' . $_ENV['WP_HOME'] . ')',
+	               ) . ' (' . env( 'WP_HOME' ) . ')',
 	'response'  => 404
 ];
 
@@ -57,7 +57,7 @@ if ( ! file_exists( $autoload_path ) ){
 		'The theme <strong>' . $theme->get(
 			'Name'
 		) . '</strong> requires additional dependencies installed through PHP Composer. Please make sure to run <code>composer install</code> and <code>composer update</code>.',
-		'[FATAL ERROR]: Could not find autoload.php',
+		'ERROR: Could not find autoload.php',
 		$default_wp_die_arguments
 	);
 } else {
@@ -68,8 +68,24 @@ if ( ! file_exists( $autoload_path ) ){
 		wp_die(
 			'<strong>' . $theme->get(
 				'Name'
-			) . '</strong> could not load <em>Timber</em>. Make sure all Composer dependencies have been installed and are using the set version defined in <code>composer.json</code>.',
-			'[FATAL ERROR]: Could not load Timber',
+			) . sprintf(
+				'</strong> could not load <a href="%s" target="_blank">Timber</a>. Make sure all Composer dependencies have been installed and are using the set version defined in <code>composer.json</code>.',
+				'https://github.com/timber/timber'
+			),
+			'ERROR: Could not load Timber',
+			$default_wp_die_arguments
+		);
+	}
+
+	if ( ! function_exists( 'get_field' ) ){
+		wp_die(
+			'<strong>' . $theme->get(
+				'Name'
+			) . sprintf(
+				'</strong> could not load <a href="%s" target="_blank">Advanced Custom Fields</a> plugin. Make sure all Composer dependencies have been installed and are using the set version defined in <code>composer.json</code>.',
+				'https://gitlab.com/wordpress-premium/advanced-custom-fields-pro'
+			),
+			'ERROR: Could not load ACF',
 			$default_wp_die_arguments
 		);
 	}

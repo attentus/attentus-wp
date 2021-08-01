@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "735d70dbe8f510bdf0e4bb4e5419a870",
+    "content-hash": "44ac7a947a9668362150cfecc9d51f7b",
     "packages": [
         {
             "name": "composer/installers",
@@ -2839,6 +2839,24 @@
             "time": "2021-07-30T22:42:00+00:00"
         },
         {
+            "name": "wpackagist-plugin/jigsaw",
+            "version": "0.9.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/jigsaw/",
+                "reference": "tags/0.9.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/jigsaw.0.9.2.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/jigsaw/"
+        },
+        {
             "name": "wpackagist-plugin/wordpress-seo",
             "version": "16.8",
             "source": {
@@ -3366,7 +3384,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4"
+        "php": ">=7.2"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"

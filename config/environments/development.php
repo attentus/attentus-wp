@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2021 by attentus mbH
+ * Copyright (C) 2021 by attentus GmbH
  * All Rights Reserved
  * https://www.attentus.com
  * info@attentus.com
@@ -8,12 +8,19 @@
  * This source code is proprietary and confidential. Unauthorized
  * copying of this file via any medium is strictly prohibited.
  *
- * @author Kolja Nolte <nolte@attentus.com>
+ * @package attentus WP
+ * @author  Kolja Nolte <nolte@attentus.com>
  */
 
 global $root_dir;
 
 use Roots\WPConfig\Config;
+
+const COMPRESS_CSS        = false;
+const COMPRESS_SCRIPTS    = false;
+const WP_LOCAL_DEV        = true;
+const CONCATENATE_SCRIPTS = false;
+const WP_CACHE            = false;
 
 Config::define( 'SAVEQUERIES', true );
 Config::define( 'WP_DEBUG', true );

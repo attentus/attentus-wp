@@ -42,7 +42,7 @@
     "wordpress-premium/font-awesome-pro": "^6",
     "wordpress-premium/wpseo-premium": "^16",
     "wpackagist-plugin/wordpress-seo": "^16",
-    "upstatement/jigsaw": "^0"
+    "wpackagist-plugin/jigsaw": "0.9.*"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
@@ -62,7 +62,8 @@
       "web/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
         "roots/soil",
-        "wordpress-premium/advanced-custom-fields-pro"
+        "wordpress-premium/advanced-custom-fields-pro",
+        "wpackagist-plugin/jigsaw"
       ],
       "web/app/plugins/{$name}/": [
         "type:wordpress-plugin"

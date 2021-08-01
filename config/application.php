@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2021 by attentus mbH
+ * Copyright (C) 2021 by attentus GmbH
  * All Rights Reserved
  * https://www.attentus.com
  * info@attentus.com
@@ -8,7 +8,8 @@
  * This source code is proprietary and confidential. Unauthorized
  * copying of this file via any medium is strictly prohibited.
  *
- * @author Kolja Nolte <nolte@attentus.com>
+ * @package attentus WP
+ * @author  Kolja Nolte <nolte@attentus.com>
  */
 
 use Roots\WPConfig\Config;
