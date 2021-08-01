@@ -35,9 +35,30 @@ class Site extends Timber\Site {
 		add_action( 'wp_enqueue_scripts', [ $this, 'add_scripts' ] );
 		add_action( 'after_setup_theme', [ $this, 'add_theme_support' ] );
 		add_action( 'after_setup_theme', [ $this, 'add_acf_options_pages' ] );
-		add_action( 'admin_menu', [ $this, 'remove_admin_pages' ] );
 		add_action( 'after_setup_theme', [ $this, 'extend_admin_toolbar' ] );
 		add_action( 'after_setup_theme', [ $this, 'extend_users_table' ] );
+		add_action( 'after_setup_theme', [ $this, 'admin_notices' ] );
+		add_action( 'admin_menu', [ $this, 'remove_admin_pages' ] );
+	}
+
+	/**
+	 * @since 0.0.1
+	 */
+	public function admin_notices() {
+		$site_public_status = get_option( 'blog_public' );
+
+		if ( ! $site_public_status ){
+			Jigsaw::show_notice(
+				__(
+					sprintf(
+						'<strong>WARNUNG:</strong> Die Option "Suchmaschinen davon abhalten, diese Website zu indexieren" ist <strong>aktiviert</strong>. <a href="%s">Jetzt deaktivieren</a>',
+						get_admin_url( 0, 'options-reading.php#blog_public' )
+					),
+					TEXTDOMAIN
+				),
+				'notice notice-warning is-dismissible'
+			);
+		}
 	}
 
 	/**
@@ -86,7 +107,7 @@ class Site extends Timber\Site {
 			$loader->clear_cache_twig();
 
 			if ( is_dir( $root_dir . '/web/app/cache' ) ){
-				rrmdir( $root_dir . '/web/app/cache' );
+				rmdir( $root_dir . '/web/app/cache' );
 			}
 		};
 

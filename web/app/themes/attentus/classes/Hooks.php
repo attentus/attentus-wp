@@ -14,6 +14,8 @@
 
 namespace attentus\attentus_WP;
 
+use Timber;
+
 /** Stop executing files when accessing them directly */
 if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
@@ -25,10 +27,14 @@ if ( ! defined( 'ABSPATH' ) ){
  * @since 0.0.1
  */
 class Hooks {
+	private object $site;
+
 	/**
 	 * Constructor call.
 	 */
 	public function __construct() {
+		$this->site = new Timber\Site();
+
 		if ( get_field( 'random_file_names', 'options' ) === true ){
 			add_filter( 'sanitize_file_name', [ $this, 'filter_rename_uploaded_file' ], 10, 1 );
 		}
@@ -41,6 +47,56 @@ class Hooks {
 		if ( get_field( 'jpeg_quality', 'options' ) !== 90 ){
 			add_filter( 'jpeg_quality', [ $this, 'filter_set_jpeg_quality' ], 10, 0 );
 		}
+
+		if ( get_field( 'branding', 'options' ) === true ){
+			add_action( 'login_enqueue_scripts', [ $this, 'add_attentus_login_logo' ] );
+
+			add_filter( 'login_headerurl', function () {
+				return 'https://www.attentus.com';
+			} );
+
+			add_action( 'wp_before_admin_bar_render', [ $this, 'add_attentus_dashboard_logo' ] );
+		}
+	}
+
+	/**
+	 * Replaces the WordPress logo see in the top left corner
+	 * on the Dashboard with the attentus logo.
+	 *
+	 * @since 0.0.1
+	 */
+	public function add_attentus_dashboard_logo(): void {
+		?>
+		<style>
+			#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
+				background-image:    url(<?= $this->site->theme->link() ?>/images/attentus-logo-square-white.svg);
+				background-position: 0 0;
+				background-repeat:   no-repeat;
+				top:                 5px;
+				color:               rgba(0, 0, 0, 0);
+			}
+		</style>
+		<?php
+	}
+
+	/**
+	 * Replaces the WordPress logo on login
+	 * pages with the attentus logo.
+	 *
+	 * @since 0.0.1
+	 */
+	public function add_attentus_login_logo(): void {
+		?>
+		<style>
+			#login h1 a,
+			.login h1 a {
+				background-image: url(<?= $this->site->theme->link;
+				?>/images/attentus-logo-square-black.svg) !important;
+				height:           80px;
+				margin-bottom:    60px;
+			}
+		</style>
+		<?php
 	}
 
 	/**
