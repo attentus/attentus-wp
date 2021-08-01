@@ -16,8 +16,6 @@ namespace attentus\attentus_WP;
 
 use Timber;
 
-$start = Timber\Helper::start_timer();
-
 /** Stop executing files when accessing them directly */
 if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
@@ -32,5 +30,3 @@ Timber::render(
 	$context,
 	TIMBER_CACHE_TIMEOUT
 );
-
-echo Timber\Helper::stop_timer( $start );
