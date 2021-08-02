@@ -86,7 +86,7 @@ class Twig extends \Timber\Twig {
 	 * @since 0.0.1
 	 */
 	public function twig_filter_json_decode( string $json ): array {
-		return json_decode( $json, true, 512, JSON_THROW_ON_ERROR );
+		return json_decode( $json, true, strlen( $json ) + 1, JSON_THROW_ON_ERROR );
 	}
 
 	public function add_twig_functions( $twig ): object {
@@ -100,6 +100,12 @@ class Twig extends \Timber\Twig {
 
 		$twig->addFunction(
 			new TwigFunction( 'Taxonomy', [ $this, 'twig_function_taxonomy' ] )
+		);
+
+		$twig->addFunction(
+			new TwigFunction( 'post', function ( $post ) {
+				return Timber::get_post( $post );
+			} )
 		);
 
 		return $twig;

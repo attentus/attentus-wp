@@ -9,33 +9,24 @@
  * copying of this file via any medium is strictly prohibited.
  *
  * @package attentus WP
- * @author  Kolja Nolte <nolte@attentus.com>
+ * @author Kolja Nolte <nolte@attentus.com>
  */
 
 namespace attentus\attentus_WP;
+
+use Timber;
 
 /** Stop executing files when accessing them directly */
 if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
 }
 
-/**
- * This class registers Ajax calls and
- * connects them with their action.
- *
- * @since 0.0.1
- */
-class Ajax {
-	public function __construct() {
-		add_action( 'wp_ajax_get_theme_version', [ $this, 'get_theme_version' ] );
-	}
+$context          = Timber::context();
+$context["posts"] = Timber::get_posts( 's=' . get_search_query() );
+$templates        = [ "search/view.twig" ];
 
-	public function get_theme_version() {
-		wp_send_json_success( [
-			'theme_version' => esc_html( ( new Site() )->theme->version )
-		] );
-	}
-
-}
-
-new Ajax();
+Timber::render(
+	$templates,
+	$context,
+	TIMBER_CACHE_TIMEOUT
+);

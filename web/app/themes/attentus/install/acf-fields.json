@@ -12,7 +12,7 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
@@ -31,7 +31,7 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
@@ -84,7 +84,7 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
@@ -94,6 +94,25 @@
                 "step": 5,
                 "prepend": "",
                 "append": "%"
+            },
+            {
+                "key": "field_610687a4167d2",
+                "label": "Branding",
+                "name": "branding",
+                "type": "true_false",
+                "instructions": "Ersetzt WordPress-Standard-Logos und -Texte mit attentus-Material zur EIgenwerbung.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 1,
+                "ui": 1,
+                "ui_on_text": "An",
+                "ui_off_text": "Aus"
             }
         ],
         "location": [
@@ -113,5 +132,66 @@
         "hide_on_screen": "",
         "active": true,
         "description": "Funktionen, die das Theme unterstützt"
+    },
+    {
+        "key": "group_6108459cac70a",
+        "title": "Google-Support",
+        "fields": [
+            {
+                "key": "field_61084659389c9",
+                "label": "Google Maps API Key",
+                "name": "google_maps_api_key",
+                "type": "text",
+                "instructions": "Legt den API Key für die Google-Maps-Unterstützung von ACF und weiteren Plugins fest.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "API Key eingeben...",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6108469a389ca",
+                "label": "Google Analytics ID",
+                "name": "google_analytics_id",
+                "type": "text",
+                "instructions": "Google Analytics Property ID.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "ID eingeben...",
+                "prepend": "UA-",
+                "append": "",
+                "maxlength": 10
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-attentus-wp"
+                }
+            ]
+        ],
+        "menu_order": 2,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "Werte für Google-Produkte"
     }
 ]

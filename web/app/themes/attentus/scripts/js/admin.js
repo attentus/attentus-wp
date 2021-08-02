@@ -12,5 +12,15 @@
  */
 
 jQuery(document).ready(function () {
-alert();
+	jQuery.ajax({
+		url:     ajaxurl,
+		method:  'get',
+		data:    {
+			action: 'get_theme_version',
+			nonce:  ''
+		},
+		success: function (returned) {
+			jQuery('#theme-version').html(returned.data.theme_version);
+		}
+	});
 });

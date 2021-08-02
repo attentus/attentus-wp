@@ -5,12 +5,6 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/web/wp" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php80" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/twig/html-extra" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/deprecation-contracts" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/mime" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php72" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-idn" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-normalizer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -12,21 +12,4 @@
  * @author  Kolja Nolte <nolte@attentus.com>
  */
 
-namespace attentus\attentus_WP;
-
-use Timber;
-
-/** Stop executing files when accessing them directly */
-if ( ! defined( 'ABSPATH' ) ){
-	die( 'Direct access to theme files is not allowed.' );
-}
-
-$context          = Timber::context();
-$context["posts"] = Timber::get_posts();
-$templates        = [ "page/view.twig" ];
-
-Timber::render(
-	$templates,
-	$context,
-	TIMBER_CACHE_TIMEOUT
-);
+get_template_part( 'page/page/page' );

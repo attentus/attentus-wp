@@ -14,6 +14,7 @@
 
 namespace attentus\attentus_WP;
 
+
 use Jigsaw;
 use Timber;
 
@@ -33,6 +34,7 @@ class Site extends Timber\Site {
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'add_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'add_scripts' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'add_admin_scripts' ] );
 		add_action( 'after_setup_theme', [ $this, 'add_theme_support' ] );
 		add_action( 'after_setup_theme', [ $this, 'add_acf_options_pages' ] );
 		add_action( 'after_setup_theme', [ $this, 'extend_admin_toolbar' ] );
@@ -172,6 +174,20 @@ class Site extends Timber\Site {
 	/**
 	 * @since 0.0.1
 	 */
+	public function add_admin_scripts(): void {
+		$js_directory_url = $this->theme->link() . '/scripts/js';
+
+		wp_enqueue_script(
+			'scripts-admin',
+			$js_directory_url . '/admin.min.js',
+			[ 'jquery' ],
+			$this->version
+		);
+	}
+
+	/**
+	 * @since 0.0.1
+	 */
 	public function add_acf_options_pages(): void {
 		if ( ! function_exists( 'acf_add_options_page' ) ){
 			return;
@@ -203,16 +219,24 @@ class Site extends Timber\Site {
 	 * @since 0.0.1
 	 */
 	public function add_theme_support(): void {
-		add_theme_support( 'soil', [
+		$google_analytics_Id = get_field( 'google_analytics_id', 'option' );
+		$google_analytics_Id = str_replace( 'UA-', '', $google_analytics_Id );
+		$google_analytics_Id = trim( $google_analytics_Id );
+		$soil                = [
 			'clean-up',
 			'disable-asset-versioning',
 			'disable-trackbacks',
-			//	'google-analytics' => 'UA-XXXXX-Y',
 			'js-to-footer',
 			'nav-walker',
 			'nice-search',
 			'relative-urls'
-		] );
+		];
+
+		if ( $google_analytics_Id ){
+			$soil['google-analytics'] = 'UA-' . $google_analytics_Id;
+		}
+
+		add_theme_support( 'soil', $soil );
 
 		add_theme_support( 'automatic-feed-links' );
 
