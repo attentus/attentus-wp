@@ -13,6 +13,7 @@
  */
 
 /** Stop executing files when accessing them directly */
+
 if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
 }
@@ -23,9 +24,9 @@ require_once __DIR__ . '/init.php';
  * Generates labels for a taxonomy based on
  * the given singular and plural name.
  *
- * @param string $singular
- * @param string $plural
- * @param mixed  $textdomain
+ * @param string $singular   Singular taxonomy name
+ * @param string $plural     Plural taxonomy name
+ * @param mixed  $textdomain Textdomain for translations
  *
  * @return array
  *
@@ -54,9 +55,9 @@ function generate_taxonomy_labels( string $singular, string $plural, $textdomain
  * Generates labels for a post type based on
  * the given singular and plural name.
  *
- * @param string $singular
- * @param string $plural
- * @param mixed  $textdomain
+ * @param string $singular   Singular post type name
+ * @param string $plural     Plural post type name
+ * @param mixed  $textdomain Textdomain for translations
  *
  * @return array
  *
@@ -136,3 +137,23 @@ function generate_post_type_labels( string $singular, string $plural, $textdomai
 		),
 	];
 }
+
+/**
+ * @param string $pattern
+ * @param mixed  $flags
+ *
+ * @return array
+ */
+function rglob( string $pattern, $flags = null ): array {
+	$files = glob( $pattern, $flags );
+
+	foreach ( glob( dirname( $pattern ) . '/*', GLOB_ONLYDIR | GLOB_NOSORT ) as $dir ) {
+		$files = wp_parse_args(
+			$files,
+			rglob( $dir . '/' . basename( $pattern ), $flags )
+		);
+	}
+
+	return (array) $files;
+}
+

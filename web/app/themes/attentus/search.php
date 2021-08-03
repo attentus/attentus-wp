@@ -12,4 +12,4 @@
  * @author  Kolja Nolte <nolte@attentus.com>
  */
 
-get_template_part( 'page/search/page' );
+get_template_part( 'pages/search/page' );

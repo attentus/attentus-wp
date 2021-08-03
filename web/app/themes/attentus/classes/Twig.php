@@ -14,6 +14,7 @@
 
 namespace attentus\attentus_WP;
 
+use Roots\WPConfig\Config;
 use Timber;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
@@ -23,12 +24,30 @@ if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
 }
 
-class Twig extends \Timber\Twig {
+class Twig extends Timber\Twig {
 	public function __construct() {
 		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
 		add_filter( 'timber/twig', [ $this, 'add_twig_filters' ] );
 		add_filter( 'timber/twig', [ $this, 'add_twig_functions' ] );
-		add_filter( 'timber/post/classmap', [ $this, 'edit_post_class_map' ] );
+		add_filter( 'timber/post/classmap', [ $this, 'class_map_post' ] );
+		add_filter( 'timber/user/classmap', [ $this, 'class_map_user' ] );
+		add_filter( 'timber/term/classmap', [ $this, 'class_map_term' ] );
+		add_filter( 'timber/twig/environment/options', [ $this, 'set_twig_options' ] );
+	}
+
+	/**
+	 * @param array $options
+	 *
+	 * @return array
+	 */
+	public function set_twig_options( array $options ): array {
+		$options['cache'] = false;
+
+		if ( WP_ENV === 'production' ){
+			$options['cache'] = true;
+		}
+
+		return $options;
 	}
 
 	/**
@@ -38,12 +57,22 @@ class Twig extends \Timber\Twig {
 	 *
 	 * @since 0.0.1
 	 */
-	public function edit_post_class_map( $class_map ): array {
-		$custom_class_map = [
+	public function class_map_post( $class_map ): array {
+		$new_class_map = [
 			'Post' => Timber\Post::class
 		];
 
-		return array_merge( $class_map, $custom_class_map );
+		return (array) array_merge( $class_map, $new_class_map );
+	}
+
+	public function class_map_user( $default_class ) {
+		return $default_class;
+	}
+
+	public function class_map_term( array $class_map ): array {
+		$new_class_map = [];
+
+		return (array) array_merge( $class_map, $new_class_map );
 	}
 
 	/**
@@ -66,12 +95,14 @@ class Twig extends \Timber\Twig {
 	 * @return mixed
 	 */
 	public function add_twig_filters( $twig ): object {
-		/*$twig->addFilter(
-			new TwigFilter( 'edit_post_link', [ $this, 'twig_filter_edit_post_link' ] )
-		);*/
-
 		$twig->addFilter(
 			new TwigFilter( 'json_decode', [ $this, 'twig_filter_json_decode' ] )
+		);
+
+		$twig->addFilter(
+			new TwigFilter( 'p', function ( string $text ): string {
+				return wpautop( $text );
+			} )
 		);
 
 		return $twig;
@@ -91,7 +122,7 @@ class Twig extends \Timber\Twig {
 
 	public function add_twig_functions( $twig ): object {
 		$twig->addFunction(
-			new TwigFunction( 'log', [ $this, 'twig_function_log' ] )
+			new TwigFunction( 'env', [ $this, 'twig_function_env' ] )
 		);
 
 		$twig->addFunction(
@@ -108,15 +139,31 @@ class Twig extends \Timber\Twig {
 			} )
 		);
 
+		$twig->addFunction(
+			new TwigFunction( 'now', [ $this, 'twig_function_now' ] )
+		);
+
 		return $twig;
 	}
 
 	/**
-	 * @param string $text The text that is to be logged
-	 * @param string $type Log type (warning|error)
+	 * @param string $time_format
+	 *
+	 * @return string
 	 */
-	public function twig_function_log( string $text, string $type = 'warnings' ): void {
-		error_log( trim( $text ) );
+	public function twig_function_now( string $time_format = '' ): string {
+		$time_format = $time_format ?: (string) get_option( 'time_format' );
+
+		return date( $time_format );
+	}
+
+	/**
+	 * @param string $constant
+	 *
+	 * @return string
+	 */
+	public function twig_function_env( string $constant ) {
+		return Config::get( $constant );
 	}
 
 	/**

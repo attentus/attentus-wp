@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ){
 }
 
 class Post extends \Timber\Post {
-	public function __construct() {
-		parent::__construct();
+	public static function xxx() {
+		
 	}
 }

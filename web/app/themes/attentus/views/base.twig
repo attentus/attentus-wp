@@ -13,7 +13,6 @@
 	</head>
 	<body class="{{ body_class }}{{ extra_body_class }}">
 		{{ fn('wp_body_open') }}
-		<nav></nav>
 		<header>
 			{% block header %}
 			{% endblock %}
@@ -29,4 +28,3 @@
 		{{ fn('wp_footer') }}
 	</body>
 </html>
-{{ flush }}

@@ -57,6 +57,22 @@ class Hooks {
 
 			add_action( 'wp_before_admin_bar_render', [ $this, 'add_attentus_dashboard_logo' ] );
 		}
+
+		add_filter( 'get_custom_logo', [ $this, 'filter_custom_logo' ] );
+	}
+
+	/**
+	 * @param string $html
+	 *
+	 * @return string
+	 *
+	 * @since 0.0.1
+	 */
+	public function filter_custom_logo( string $html ): string {
+		$alt  = esc_attr( get_bloginfo( 'name' ) . ' logo' );
+		$html = str_replace( 'alt=""', 'alt="' . $alt . '"', $html );
+
+		return trim( $html );
 	}
 
 	/**
@@ -123,6 +139,7 @@ class Hooks {
 	 */
 	public function filter_check_file_types( $data, $file, $file_name, $mimes ): array {
 		global $wp_version;
+
 		if ( $wp_version !== '4.7.1' ){
 			return $data;
 		}

@@ -21,6 +21,7 @@
 
 namespace attentus\attentus_WP;
 
+use ACF;
 use Timber\Timber;
 use WP_Theme;
 use function Env\env;
@@ -30,24 +31,17 @@ if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
 }
 
-define( 'TEXTDOMAIN', env( 'WP_TEXTDOMAIN' ) );
-
-const TIMBER_CACHE_TIMEOUT = 1;
-
-/** Load Composer packages */
 $autoload_path = ABSPATH . '/../../vendor/autoload.php';
-
-/** Theme object */
-$theme = new WP_Theme( get_stylesheet_directory(), '/' );
+$theme         = new WP_Theme( get_stylesheet_directory(), '/' );
+$link_url      = 'mailto:' . get_bloginfo( 'admin_email' );
+$link_url      .= '?subject=' . 'ERROR: Plugin missing on ' . get_bloginfo( 'name' );
+$link_url      .= ' (' . env( 'WP_HOME' ) . ')';
+$link_url      .= '&body=The plugin %plugin% is missing and/or cannot be loaded';
 
 /** Arguments for default wp_die() calls */
 $default_wp_die_arguments = [
 	'link_text' => 'Report error to the administrator &raquo;',
-	'link_url'  => 'mailto:' . get_bloginfo(
-			'admin_email'
-		) . '?subject=' . 'ERROR: ' . get_bloginfo(
-		               'name'
-	               ) . ' (' . env( 'WP_HOME' ) . ')',
+	'link_url'  => $link_url,
 	'response'  => 404
 ];
 
@@ -63,21 +57,24 @@ if ( ! file_exists( $autoload_path ) ){
 } else {
 	require_once $autoload_path;
 
-	/** Stop if Timber can't be found */
-	if ( ! class_exists( Timber::class ) ){
-		wp_die(
-			'<strong>' . $theme->get(
-				'Name'
-			) . sprintf(
-				'</strong> could not load <a href="%s" target="_blank">Timber</a>. Make sure all Composer dependencies have been installed and are using the set version defined in <code>composer.json</code>.',
-				'https://github.com/timber/timber'
-			),
-			'ERROR: Could not load Timber',
-			$default_wp_die_arguments
-		);
+	$required_classes = [
+		'Timber'                     => Timber::class,
+		'Advanced Custom Fields Pro' => ACF::class
+	];
+
+	foreach ( $required_classes as $plugin => $required_class ) {
+		$default_wp_die_arguments['link_url'] = str_replace( '%plugin%', $plugin, $default_wp_die_arguments['link_url'] );
+
+		if ( ! class_exists( $required_class ) ){
+			wp_die(
+				'ERROR: The plugin or library <strong>' . $plugin . '</strong> was not loaded. Please make sure all PHP Composer packages have been installed by rerunning <code>composer install</code> and <code>composer update</code>. If the error still persists, there may be a problem with PHP Composer itself.',
+				sprintf( __( 'ERROR: Could not load plugin %s', TEXTDOMAIN ), $plugin ),
+				$default_wp_die_arguments
+			);
+		}
 	}
 
-	if ( ! function_exists( 'get_field' ) ){
+	if ( ! class_exists( ACF::class ) ){
 		wp_die(
 			'<strong>' . $theme->get(
 				'Name'

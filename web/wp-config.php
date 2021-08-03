@@ -8,7 +8,8 @@
 if ( ! defined( 'WP_MEMORY_LIMIT' ) ){
 	define( "WP_MEMORY_LIMIT", '512M' );
 }
-
 require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 require_once dirname( __DIR__ ) . '/config/application.php';
 require_once ABSPATH . 'wp-settings.php';
+
+define( 'DB_PREFIX', 'site_' );

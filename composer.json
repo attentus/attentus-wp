@@ -38,7 +38,7 @@
     "timber/timber": "^2",
     "twbs/bootstrap": "^5",
     "vlucas/phpdotenv": "^5",
-    "wordpress-premium/advanced-custom-fields-pro": "^5",
+    "wordpress-premium/advanced-custom-fields-pro": ">= 5 | ^6",
     "wordpress-premium/font-awesome-pro": "^6",
     "wordpress-premium/wpseo-premium": "^16",
     "wpackagist-plugin/jigsaw": "0.9.*"
@@ -75,8 +75,7 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "python3 ./scripts/post-install.py",
-      "cp -n .env.example .env"
+      "python3 ./scripts/post-install.py"
     ],
     "post-update-cmd": [
       "python3 ./scripts/post-update.py"

@@ -14,7 +14,6 @@
 
 namespace attentus\attentus_WP;
 
-
 use Jigsaw;
 use Timber;
 
@@ -88,7 +87,7 @@ class Site extends Timber\Site {
 		}
 
 		Jigsaw::add_user_column(
-			__( 'Registriert', TEXTDOMAIN ),
+			_x( 'Registriert', 'Date of user registration', TEXTDOMAIN ),
 			function ( $user_id ) {
 				$user = Timber::get_user( $user_id );
 				$time = mktime( $user->user_registered_ );
@@ -248,14 +247,21 @@ class Site extends Timber\Site {
 			'comment-form',
 			'comment-list',
 			'gallery',
-			'caption',
+			'caption'
 		] );
 
 		add_theme_support( "wp-block-styles" );
 
 		add_theme_support( "responsive-embeds" );
 
-		add_theme_support( "custom-logo", [] );
+		add_theme_support( "custom-logo", [
+			'height'               => 100,
+			'width'                => 100,
+			'flex-height'          => true,
+			'flex-width'           => true,
+			'header-text'          => [ 'site-title', 'site-description' ],
+			'unlink-homepage-logo' => true
+		] );
 
 		add_theme_support( "custom-header", [] );
 

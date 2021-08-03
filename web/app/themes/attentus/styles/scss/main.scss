@@ -12,15 +12,32 @@
  */
 
 @import 'bootstrap/bootstrap';
-@import 'responsive-helper';
 @import '../../pages/404/style';
 @import '../../pages/archive/style';
+@import '../../pages/attachment/style';
+@import '../../pages/author/style';
 @import '../../pages/home/style';
 @import '../../pages/page/style';
 @import '../../pages/search/style';
 @import '../../pages/single/style';
 
+$theme-colors: (
+	               'primary': $primary,
+	               'secondary': $secondary,
+	               'success': $success,
+	               'info': $info,
+	               'warning': $warning,
+	               'danger': '',
+	               'light': $light,
+	               'dark': $dark
+               );
+
+.x {
+	background-color: $red-400;
+}
+
 body {
+	font-size: 16px;
 }
 
 .aligncenter {

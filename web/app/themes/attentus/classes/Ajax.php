@@ -35,7 +35,6 @@ class Ajax {
 			'theme_version' => esc_html( ( new Site() )->theme->version )
 		] );
 	}
-
 }
 
-new Ajax();
+//new Ajax();

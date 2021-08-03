@@ -46,13 +46,21 @@ if ( file_exists( $root_dir . '/.env' ) ){
  * Default: production
  */
 define( 'WP_ENV', env( 'WP_ENV' ) ?: 'production' );
+define( 'WP_ENVIRONMENT_TYPE', env( 'WP_ENV' ) ?: 'production' );
 
-/** General */
-Config::define( 'WP_THEME_SLUG', env( 'WP_THEME_SLUG' ) );
-Config::define( 'WP_TEXTDOMAIN', env( 'WP_TEXTDOMAIN' ) ?: env( 'WP_THEME_SLUG' ) );
+if ( env( 'WP_ENV' ) === 'production' ){
+	Config::define( 'TIMBER_CACHE_TIMEOUT', (int) env( 'TIMBER_CACHE_TIMEOUT' ) ?: 3600 );
+} else {
+	Config::define( 'TIMBER_CACHE_TIMEOUT', (int) env( 'TIMBER_CACHE_TIMEOUT' ) ?: 1 );
+}
+
+define( 'TIMBER_CACHE_TIMEOUT', Config::get( 'TIMBER_CACHE_TIMEOUT' ) );
+
+Config::define( 'TEXTDOMAIN', env( 'THEME_TEXTDOMAIN' ) ?: 'attentus' );
+define( 'TEXTDOMAIN', Config::get( 'TEXTDOMAIN' ) );
 
 /** URLs */
-Config::define( 'WP_HOME', env( 'WP_HOME' ) );
+Config::define( 'WP_HOME', env( 'WP_HOME' ) ?: $_SERVER['HTTP_HOST'] );
 Config::define( 'WP_SITEURL', env( 'WP_SITEURL' ) );
 
 /** Content directory */
@@ -61,8 +69,8 @@ Config::define( 'WP_CONTENT_DIR', $webroot_dir . Config::get( 'CONTENT_DIR' ) );
 Config::define( 'WP_CONTENT_URL', Config::get( 'WP_HOME' ) . Config::get( 'CONTENT_DIR' ) );
 
 /** Database settings */
-Config::define( 'DB_NAME', env( 'DB_NAME' ) );
-Config::define( 'DB_USER', env( 'DB_USER' ) );
+Config::define( 'DB_NAME', env( 'DB_NAME' ) ?: 'root' );
+Config::define( 'DB_USER', env( 'DB_USER' ) ?: 'root' );
 Config::define( 'DB_PASSWORD', env( 'DB_PASSWORD' ) );
 Config::define( 'DB_HOST', env( 'DB_HOST' ) ?: 'localhost' );
 Config::define( 'DB_CHARSET', 'utf8mb4' );
@@ -102,7 +110,7 @@ Config::define( 'WP_POST_REVISIONS', env( 'WP_POST_REVISIONS' ) ?: 100 );
  * Debugging Settings
  */
 Config::define( 'WP_DEBUG_DISPLAY', false );
-Config::define( 'WP_DEBUG_LOG', env( 'WP_DEBUG_LOG' ) ?? $root_dir . '/logs/debug.log' );
+Config::define( 'WP_DEBUG_LOG', env( 'WP_DEBUG_LOG' ) ?: $root_dir . '/logs/debug.log' );
 Config::define( 'SCRIPT_DEBUG', true );
 
 ini_set( 'display_errors', '0' );

@@ -32,6 +32,9 @@ class Taxonomy {
 	/** @var string $taxonomy Name of the taxonomy */
 	public string $taxonomy;
 
+	/** @var iterable $terms */
+	public iterable $terms;
+
 	/**
 	 * Constructor.
 	 *
@@ -52,8 +55,12 @@ class Taxonomy {
 	 * @since 0.0.1
 	 */
 	public function get_terms(): iterable {
-		return Timber::get_terms( [
+		$terms = Timber::get_terms( [
 			'taxonomy' => $this->taxonomy
 		] );
+
+		$this->terms = $terms;
+
+		return $terms;
 	}
 }

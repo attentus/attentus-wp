@@ -23,8 +23,18 @@ if ( ! defined( 'ABSPATH' ) ){
 
 global $wp_query;
 
+if ( is_archive() ){
+	if ( is_post_type_archive() ){
+
+	} elseif ( is_tax( 'category' ) ) {
+
+	} elseif ( is_tax( 'post_tag' ) ) {
+
+	}
+}
+
 $context          = Timber::context();
-$context["posts"] = Timber::get_posts( $wp_query );
+$context['posts'] = Timber::get_posts( $wp_query );
 $templates        = [ "archive/view.twig" ];
 
 Timber::render(
