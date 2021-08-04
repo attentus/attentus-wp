@@ -1,197 +1,197 @@
 [
-    {
-        "key": "group_61059750dd1e4",
-        "title": "Funktionen",
-        "fields": [
-            {
-                "key": "field_61066864625b4",
-                "label": "Zufällige Dateinamen",
-                "name": "random_file_names",
-                "type": "true_false",
-                "instructions": "Ändert den Namen von hochgeladenen Dateien in einen zufälligen MD5-String um (z.B.: <code>95f4212d0c44.svg<\/code>).",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "message": "",
-                "default_value": 1,
-                "ui": 1,
-                "ui_on_text": "An",
-                "ui_off_text": "Aus"
-            },
-            {
-                "key": "field_6106698708f03",
-                "label": ".svg-Uploads erlauben",
-                "name": "allow_svg_uploads",
-                "type": "true_false",
-                "instructions": "Erlaubt das Hochladen von .svg-Dateien.",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "message": "",
-                "default_value": 1,
-                "ui": 1,
-                "ui_on_text": "An",
-                "ui_off_text": "Aus"
-            },
-            {
-                "key": "field_61066a6377e51",
-                "label": "Admin-Seiten ausblenden",
-                "name": "removed_admin_pages",
-                "type": "select",
-                "instructions": "Wähle die Seiten aus, die nicht im Administratorenmenü erscheinen sollen.",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "choices": {
-                    "edit.php": "Beiträge",
-                    "edit.php?post_type=page": "Seiten",
-                    "edit-comments.php": "Kommentare",
-                    "themes.php": "Design",
-                    "plugins.php": "Plugins",
-                    "users.php": "Benutzer",
-                    "tools.php": "Werkzeuge",
-                    "options-general.php": "Einstellungen"
-                },
-                "default_value": [
-                    "edit.php",
-                    "edit-comments.php"
-                ],
-                "allow_null": 0,
-                "multiple": 1,
-                "ui": 1,
-                "ajax": 0,
-                "return_format": "value",
-                "placeholder": ""
-            },
-            {
-                "key": "field_61067ca5e87f4",
-                "label": "JPEG-Qualität",
-                "name": "jpeg_quality",
-                "type": "range",
-                "instructions": "Legt die Qualität von hochgeladenen JPEG-Bildern fest. <strong>Standard:<\/strong> 90.",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": 90,
-                "min": 25,
-                "max": 100,
-                "step": 5,
-                "prepend": "",
-                "append": "%"
-            },
-            {
-                "key": "field_610687a4167d2",
-                "label": "Branding",
-                "name": "branding",
-                "type": "true_false",
-                "instructions": "Ersetzt WordPress-Standard-Logos und -Texte mit attentus-Material zur EIgenwerbung.",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "message": "",
-                "default_value": 1,
-                "ui": 1,
-                "ui_on_text": "An",
-                "ui_off_text": "Aus"
-            }
+  {
+    "key": "group_61059750dd1e4",
+    "title": "Funktionen",
+    "fields": [
+      {
+        "key": "field_61066864625b4",
+        "label": "Zufällige Dateinamen",
+        "name": "random_file_names",
+        "type": "true_false",
+        "instructions": "Ändert den Namen von hochgeladenen Dateien in einen zufälligen MD5-String um (z.B.: <code>95f4212d0c44.svg<\/code>).",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "An",
+        "ui_off_text": "Aus"
+      },
+      {
+        "key": "field_6106698708f03",
+        "label": ".svg-Uploads erlauben",
+        "name": "allow_svg_uploads",
+        "type": "true_false",
+        "instructions": "Erlaubt das Hochladen von .svg-Dateien.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "An",
+        "ui_off_text": "Aus"
+      },
+      {
+        "key": "field_61066a6377e51",
+        "label": "Admin-Seiten ausblenden",
+        "name": "removed_admin_pages",
+        "type": "select",
+        "instructions": "Wähle die Seiten aus, die nicht im Administratorenmenü erscheinen sollen.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "edit.php": "Beiträge",
+          "edit.php?post_type=page": "Seiten",
+          "edit-comments.php": "Kommentare",
+          "themes.php": "Design",
+          "plugins.php": "Plugins",
+          "users.php": "Benutzer",
+          "tools.php": "Werkzeuge",
+          "options-general.php": "Einstellungen"
+        },
+        "default_value": [
+          "edit.php",
+          "edit-comments.php"
         ],
-        "location": [
-            [
-                {
-                    "param": "options_page",
-                    "operator": "==",
-                    "value": "acf-options-attentus-wp"
-                }
-            ]
-        ],
-        "menu_order": 1,
-        "position": "normal",
-        "style": "default",
-        "label_placement": "top",
-        "instruction_placement": "label",
-        "hide_on_screen": "",
-        "active": true,
-        "description": "Funktionen, die das Theme unterstützt"
-    },
-    {
-        "key": "group_6108459cac70a",
-        "title": "Google-Support",
-        "fields": [
-            {
-                "key": "field_61084659389c9",
-                "label": "Google Maps API Key",
-                "name": "google_maps_api_key",
-                "type": "text",
-                "instructions": "Legt den API Key für die Google-Maps-Unterstützung von ACF und weiteren Plugins fest.",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "API Key eingeben...",
-                "prepend": "",
-                "append": "",
-                "maxlength": ""
-            },
-            {
-                "key": "field_6108469a389ca",
-                "label": "Google Analytics ID",
-                "name": "google_analytics_id",
-                "type": "text",
-                "instructions": "Google Analytics Property ID.",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "ID eingeben...",
-                "prepend": "UA-",
-                "append": "",
-                "maxlength": 10
-            }
-        ],
-        "location": [
-            [
-                {
-                    "param": "options_page",
-                    "operator": "==",
-                    "value": "acf-options-attentus-wp"
-                }
-            ]
-        ],
-        "menu_order": 2,
-        "position": "normal",
-        "style": "default",
-        "label_placement": "top",
-        "instruction_placement": "label",
-        "hide_on_screen": "",
-        "active": true,
-        "description": "Werte für Google-Produkte"
-    }
+        "allow_null": 0,
+        "multiple": 1,
+        "ui": 1,
+        "ajax": 0,
+        "return_format": "value",
+        "placeholder": ""
+      },
+      {
+        "key": "field_61067ca5e87f4",
+        "label": "JPEG-Qualität",
+        "name": "jpeg_quality",
+        "type": "range",
+        "instructions": "Legt die Qualität von hochgeladenen JPEG-Bildern fest. <strong>Standard:<\/strong> 90.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": 90,
+        "min": 25,
+        "max": 100,
+        "step": 5,
+        "prepend": "",
+        "append": "%"
+      },
+      {
+        "key": "field_610687a4167d2",
+        "label": "Branding",
+        "name": "branding",
+        "type": "true_false",
+        "instructions": "Ersetzt WordPress-Standard-Logos und -Texte mit attentus-Material zur EIgenwerbung.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "An",
+        "ui_off_text": "Aus"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "acf-options-attentus-wp"
+        }
+      ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Funktionen, die das Theme unterstützt"
+  },
+  {
+    "key": "group_6108459cac70a",
+    "title": "Google-Support",
+    "fields": [
+      {
+        "key": "field_61084659389c9",
+        "label": "Google Maps API Key",
+        "name": "google_maps_api_key",
+        "type": "text",
+        "instructions": "Legt den API Key für die Google-Maps-Unterstützung von ACF und weiteren Plugins fest.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "placeholder": "API Key eingeben...",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_6108469a389ca",
+        "label": "Google Analytics ID",
+        "name": "google_analytics_id",
+        "type": "text",
+        "instructions": "Google Analytics Property ID.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "placeholder": "ID eingeben...",
+        "prepend": "UA-",
+        "append": "",
+        "maxlength": 10
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "acf-options-attentus-wp"
+        }
+      ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Werte für Google-Produkte"
+  }
 ]

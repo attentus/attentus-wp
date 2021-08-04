@@ -21,9 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access to theme files is not allowed.' );
 }
 
-$context           = Timber::context();
-$context["author"] = Timber::get_user();
-$templates         = [ "author/view.twig" ];
+$context               = Timber::context();
+$context["attachment"] = Timber::get_post();
+$templates             = [ "attachment/view.twig" ];
 
 Timber::render(
 	$templates,
