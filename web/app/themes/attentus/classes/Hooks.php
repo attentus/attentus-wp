@@ -85,7 +85,7 @@ class Hooks {
 		?>
 		<style>
 			#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
-				background-image:    url(<?= $this->site->theme->link() ?>/images/attentus-logo-square-white.svg);
+				background-image:    url(<?php echo $this->site->theme->link() ?>/images/attentus-logo-square-white.svg);
 				background-position: 0 0;
 				background-repeat:   no-repeat;
 				top:                 5px;
@@ -106,7 +106,7 @@ class Hooks {
 		<style>
 			#login h1 a,
 			.login h1 a {
-				background-image: url(<?= $this->site->theme->link;
+				background-image: url(<?php echo $this->site->theme->link;
 				?>/images/attentus-logo-square-black.svg) !important;
 				height:           80px;
 				margin-bottom:    60px;

@@ -20,7 +20,5 @@ if ( ! defined( 'ABSPATH' ) ){
 }
 
 class Post extends \Timber\Post {
-	public static function xxx() {
-		
-	}
+
 }

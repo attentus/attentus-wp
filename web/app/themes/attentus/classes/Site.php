@@ -272,7 +272,7 @@ class Site extends Timber\Site {
 	 * @since 0.0.1
 	 */
 	public function remove_admin_pages(): void {
-		$admin_pages = get_field( 'removed_admin_pages', 'options' );
+		$admin_pages = (array)get_field( 'removed_admin_pages', 'options' );
 
 		foreach ( $admin_pages as $admin_page ) {
 			remove_menu_page( $admin_page );
