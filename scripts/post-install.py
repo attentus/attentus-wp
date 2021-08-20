@@ -1,8 +1,18 @@
 import subprocess
 
-from functions import copy_env_file
+def copy_env_file():
+	env_path = '../.env'
 
-copy_env_file()
+	if os.path.exists(env_path):
+		return True
+	else:
+		shutil.copy(
+			'../.env.example',
+			env_path
+		)
+
+		return True
+
 
 try:
 	subprocess.check_output(['wp', 'core', 'version'])

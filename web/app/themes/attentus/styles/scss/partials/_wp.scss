@@ -1,5 +1,4 @@
-<?php
-/**
+/*!
  * Copyright (C) 2021 by attentus GmbH
  * All Rights Reserved
  * https://www.attentus.com
@@ -9,12 +8,25 @@
  * copying of this file via any medium is strictly prohibited.
  *
  * @package attentus WP
- * @author  Kolja Nolte <nolte@attentus.com>
+ * @author Kolja Nolte <nolte@attentus.com>
  */
 
-/** Stop executing files when accessing them directly */
-if ( ! defined( 'ABSPATH' ) ) {
-	die( 'Direct access to theme files is not allowed.' );
+.aligncenter {
+	text-align: center;
+	margin:     0 auto;
 }
 
-get_template_part( 'home' );
+.alignleft {
+	text-align: left;
+}
+
+.alignright {
+	text-align: right;
+}
+
+.wp-caption,
+.wp-caption-text,
+.gallery-caption,
+.bypostauthor,
+.screen-reader-text {
+}
