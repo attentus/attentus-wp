@@ -22,6 +22,11 @@ if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
 }
 
+/**
+ * Main class for this theme.
+ *
+ * @since 1.0.0
+ */
 class Site extends Timber\Site {
 	/** @var string $version The theme's version, alias of $this->theme->version */
 	public string $version;
@@ -34,6 +39,8 @@ class Site extends Timber\Site {
 		add_action( 'wp_enqueue_scripts', [ $this, 'add_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'add_scripts' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'add_admin_scripts' ] );
+		add_action( 'after_setup_theme', [ $this, 'load_textdomain' ] );
+		add_action( 'after_setup_theme', [ $this, 'add_menus' ] );
 		add_action( 'after_setup_theme', [ $this, 'add_theme_support' ] );
 		add_action( 'after_setup_theme', [ $this, 'add_acf_options_pages' ] );
 		add_action( 'after_setup_theme', [ $this, 'extend_admin_toolbar' ] );
@@ -45,9 +52,47 @@ class Site extends Timber\Site {
 	}
 
 	/**
+	 * Loads the translation file for this theme.
+	 *
+	 * @since 1.0.0
+	 */
+	public function load_textdomain(): void {
+		if ( is_child_theme() ){
+			load_child_theme_textdomain(
+				TEXTDOMAIN,
+				get_template_directory() . '/languages'
+			);
+		} else {
+			load_theme_textdomain(
+				TEXTDOMAIN,
+				get_stylesheet_directory() . '/languages'
+			);
+		}
+	}
+
+	/**
+	 * Registers navigation menus.
+	 *
+	 * @since 1.0.0
+	 */
+	public function add_menus(): void {
+		register_nav_menu(
+			'Header',
+			__( 'Menu in the header', TEXTDOMAIN )
+		);
+
+		register_nav_menu(
+			'footer',
+			__( 'Menu in the footer', TEXTDOMAIN )
+		);
+	}
+
+	/**
 	 * @param $twig
 	 *
 	 * @return object
+	 *
+	 * @since 1.0.0
 	 */
 	public function add_twig_globals( $twig ): object {
 		$twig->addGlobal( 'site', $this );
@@ -79,7 +124,7 @@ class Site extends Timber\Site {
 	 * Adds the registration date of a user
 	 * to the overview table.
 	 *
-	 * @sincee 0.0.1
+	 * @since 0.0.1
 	 */
 	public function extend_users_table(): void {
 		if ( ! class_exists( 'Jigsaw' ) ){
@@ -87,7 +132,7 @@ class Site extends Timber\Site {
 		}
 
 		Jigsaw::add_user_column(
-			_x( 'Registriert', 'Date of user registration', TEXTDOMAIN ),
+			_x( 'Registered', 'Date of user registration', TEXTDOMAIN ),
 			function ( $user_id ) {
 				$user = Timber::get_user( $user_id );
 				$time = mktime( $user->user_registered_ );
@@ -125,7 +170,7 @@ class Site extends Timber\Site {
 			}
 		};
 
-		Jigsaw::add_toolbar_group( 'Schnellaktionen', [ $optionOne ] );
+		Jigsaw::add_toolbar_group( __( "Quick Action", TEXTDOMAIN ), [ $optionOne ] );
 	}
 
 	/**
@@ -272,7 +317,7 @@ class Site extends Timber\Site {
 	 * @since 0.0.1
 	 */
 	public function remove_admin_pages(): void {
-		$admin_pages = (array)get_field( 'removed_admin_pages', 'options' );
+		$admin_pages = (array) get_field( 'removed_admin_pages', 'options' );
 
 		foreach ( $admin_pages as $admin_page ) {
 			remove_menu_page( $admin_page );
@@ -281,3 +326,4 @@ class Site extends Timber\Site {
 }
 
 new Site();
+

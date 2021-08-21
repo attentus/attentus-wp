@@ -14,7 +14,7 @@
 
 /** Stop executing files when accessing them directly */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
 }
 
@@ -26,13 +26,13 @@ require_once __DIR__ . '/init.php';
  *
  * @param string $singular   Singular taxonomy name
  * @param string $plural     Plural taxonomy name
- * @param mixed  $textdomain Textdomain for translations
+ * @param string $textdomain Textdomain for translations
  *
  * @return array
  *
  * @since 1.0.0
  */
-function generate_taxonomy_labels( string $singular, string $plural, $textdomain = TEXTDOMAIN ): array {
+function generate_taxonomy_labels( string $singular, string $plural, string $textdomain = TEXTDOMAIN ): array {
 	$singular_lowercase = lcfirst( $singular );
 	$plural_lowercase   = lcfirst( $plural );
 
@@ -57,13 +57,13 @@ function generate_taxonomy_labels( string $singular, string $plural, $textdomain
  *
  * @param string $singular   Singular post type name
  * @param string $plural     Plural post type name
- * @param mixed  $textdomain Textdomain for translations
+ * @param string $textdomain Textdomain for translations
  *
  * @return array
  *
  * @since 1.0.0
  */
-function generate_post_type_labels( string $singular, string $plural, $textdomain = TEXTDOMAIN ): array {
+function generate_post_type_labels( string $singular, string $plural, string $textdomain = TEXTDOMAIN ): array {
 	$singular_lowercase = lcfirst( $singular );
 	$plural_lowercase   = lcfirst( $plural );
 
@@ -156,4 +156,3 @@ function rglob( string $pattern, $flags = null ): array {
 
 	return (array) $files;
 }
-

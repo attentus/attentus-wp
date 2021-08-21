@@ -17,12 +17,14 @@ namespace attentus\attentus_WP;
 use Timber;
 
 /** Stop executing files when accessing them directly */
-if ( ! defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
 }
 
-$context   = Timber::context();
-$templates = [ "home/view.twig" ];
+$context          = Timber::context();
+$context['post']  = Timber::get_post();
+$context['posts'] = Timber::get_posts();
+$templates        = [ "home/view.twig" ];
 
 Timber::render(
 	$templates,

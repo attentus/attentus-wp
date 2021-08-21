@@ -22,5 +22,6 @@ const WP_CACHE            = true;
 
 Config::define( 'WP_DEBUG', true );
 Config::define( 'WP_DEBUG_DISPLAY', false );
+Config::define( 'WP_DEBUG_LOG', true );
 Config::define( 'DISALLOW_FILE_MODS', true );
 Config::define( 'WP_DISABLE_FATAL_ERROR_HANDLER', false );

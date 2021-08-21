@@ -13,7 +13,7 @@
  */
 
 /** Stop executing files when accessing them directly */
-if ( ! defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
 }
 

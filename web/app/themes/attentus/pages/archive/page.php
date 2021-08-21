@@ -17,14 +17,14 @@ namespace attentus\attentus_WP;
 use Timber;
 
 /** Stop executing files when accessing them directly */
-if ( ! defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
 }
 
 global $wp_query;
 
-if ( is_archive() ) {
-	if ( is_post_type_archive() ) {
+if ( is_archive() ){
+	if ( is_post_type_archive() ){
 
 	} elseif ( is_tax( 'category' ) ) {
 

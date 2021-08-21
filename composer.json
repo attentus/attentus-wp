@@ -36,12 +36,12 @@
     "roots/wp-config": "^1.0",
     "roots/wp-password-bcrypt": "^1.0",
     "timber/timber": "^2",
-    "twbs/bootstrap": "^5",
     "vlucas/phpdotenv": "^5",
+    "twbs/bootstrap": "^5",
     "wordpress-premium/advanced-custom-fields-pro": "^5",
     "wordpress-premium/font-awesome-pro": "^6",
     "wordpress-premium/wpseo-premium": "^16",
-    "wpackagist-plugin/wordpress-seo": "^16"
+    "wpackagist-plugin/wordpress-seo": "^16",
     "wpackagist-plugin/jigsaw": "0.9.*",
     "upstatement/routes": "^0"
   },

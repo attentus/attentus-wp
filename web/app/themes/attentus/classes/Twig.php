@@ -72,7 +72,7 @@ class Twig extends Timber\Twig {
 	public function class_map_term( array $class_map ): array {
 		$new_class_map = [];
 
-		return (array) array_merge( $class_map, $new_class_map );
+		return array_merge( $class_map, $new_class_map );
 	}
 
 	/**
@@ -83,8 +83,22 @@ class Twig extends Timber\Twig {
 	 * @since 0.0.1
 	 */
 	public function add_to_context( array $context ): array {
-		$context['site']     = new Site();
-		$context['ajax_url'] = get_admin_url( 0, 'admin-ajax.php' );
+		$menus                 = get_registered_nav_menus();
+		$context['site']       = new Site();
+		$context['ajax_url']   = get_admin_url( get_current_blog_id(), 'admin-ajax.php' );
+		$context['menus']      = [];
+		$context['textdomain'] = TEXTDOMAIN;
+
+		/**
+		 * Loops through all registered menus and assigns them
+		 * to the global context.
+		 *
+		 * @var string $menu        Menu name
+		 * @var string $description Menu description
+		 */
+		foreach ( $menus as $menu => $description ) {
+			$context['menus'][$menu] = Timber::get_menu( $menu );
+		}
 
 		return $context;
 	}
@@ -105,7 +119,15 @@ class Twig extends Timber\Twig {
 			} )
 		);
 
+		$twig->addFilter(
+			new TwigFilter( 'int', [ $this, 'twig_filter_int' ] )
+		);
+
 		return $twig;
+	}
+
+	public function twig_filter_int( $string ) {
+		return (int) $string;
 	}
 
 	/**
@@ -130,7 +152,7 @@ class Twig extends Timber\Twig {
 		);
 
 		$twig->addFunction(
-			new TwigFunction( 'Taxonomy', [ $this, 'twig_function_taxonomy' ] )
+			new TwigFunction( 'taxonomy', [ $this, 'twig_function_taxonomy' ] )
 		);
 
 		$twig->addFunction(
@@ -143,7 +165,28 @@ class Twig extends Timber\Twig {
 			new TwigFunction( 'now', [ $this, 'twig_function_now' ] )
 		);
 
+		$twig->addFunction(
+			new TwigFunction( 'meta', [ $this, 'twig_function_meta' ] )
+		);
+
 		return $twig;
+	}
+
+	/**
+	 * @param string $field   Name of the field
+	 * @param mixed  $post_id ID or 'options' if field is on ACF options page
+	 *
+	 * @return mixed
+	 */
+	public function twig_function_meta( string $field, $post_id = 0 ) {
+		$post_id = $post_id ?: (int) get_the_ID();
+		$value   = get_post_meta( $field, $post_id, true );
+
+		if ( function_exists( 'get_field' ) ){
+			$value = get_field( $field, $post_id );
+		}
+
+		return $value;
 	}
 
 	/**

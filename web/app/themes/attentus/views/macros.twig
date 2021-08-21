@@ -1,4 +1,4 @@
-{# Displays a post's dat as HTML #}
+{# Displays a post's date as HTML #}
 {% macro html_date(post, time_ago = false) %}
 	{% set meta_date = post.date('Y-m-d\\TH:i:s') %}
 	{% if time_ago == true %}
@@ -11,7 +11,7 @@
 	</time>
 {% endmacro html_date %}
 
-{# Displays a post's thumbnai as HTML #}
+{# Displays a post's thumbnail as HTML #}
 {% macro html_thumbnail(post, width, height, classes = 'img-fluid', linked = false) %}
 	{% set thumbnail      = post.thumbnail %}
 	{% set thumbnail_url  = thumbnail.src|default(site.theme.link ~ '/images/image-not-available.jpg')|towebp(width, height) %}
@@ -26,7 +26,7 @@
 {% endmacro html_thumbnail %}
 
 {# Displays a Bootstrap 5 dropdown button #}
-{% macro dropdown_button(text, items, btn_class = '', id = '') %}
+{% macro html_dropdown_button(text, items, btn_class = '', id = '') %}
 	{% set btn_class = btn_class|default('secondary') %}
 	{% set id = id|default('dropdown-' ~ random(1, 25)) %}
 	<div class="dropdown">
@@ -43,4 +43,21 @@
 			{% endfor %}
 		</ul>
 	</div>
-{% endmacro dropdown_button %}
+{% endmacro html_dropdown_button %}
+
+{# A range slider #}
+{% macro html_range(from = 0, to = 0, label = '', id = 'range', step = 0) %}
+	{% if label is not empty %}
+		<label for="{{ id|e }}" class="form-label">
+			{{ label }}
+		</label>
+	{% endif %}
+	<input type="range" class="form-range"
+		{% if from != 0 and to != 0 %}
+			min="{{ from|int }}" max="{{ to|int }}"
+		{% endif %}
+		{% if step != 0 %}
+			step="{{ step|int }}"
+		{% endif %}
+		id="{{ id|e }}">
+{% endmacro html_range %}

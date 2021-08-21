@@ -109,7 +109,7 @@ Config::define( 'WP_POST_REVISIONS', env( 'WP_POST_REVISIONS' ) ?: 100 );
 /**
  * Debugging Settings
  */
-Config::define( 'WP_DEBUG_DISPLAY', false );
+Config::define( 'WP_DEBUG_DISPLAY', env( 'WP_DEBUG_DISPLAY' ) ?: false );
 Config::define( 'WP_DEBUG_LOG', env( 'WP_DEBUG_LOG' ) ?: $root_dir . '/logs/debug.log' );
 Config::define( 'SCRIPT_DEBUG', true );
 
