@@ -77,7 +77,7 @@ class Site extends Timber\Site {
 	 */
 	public function add_menus(): void {
 		register_nav_menu(
-			'Header',
+			'header',
 			__( 'Menu in the header', TEXTDOMAIN )
 		);
 
@@ -263,10 +263,7 @@ class Site extends Timber\Site {
 	 * @since 0.0.1
 	 */
 	public function add_theme_support(): void {
-		$google_analytics_Id = get_field( 'google_analytics_id', 'option' );
-		$google_analytics_Id = str_replace( 'UA-', '', $google_analytics_Id );
-		$google_analytics_Id = trim( $google_analytics_Id );
-		$soil                = [
+		$soil = [
 			'clean-up',
 			'disable-asset-versioning',
 			'disable-trackbacks',
@@ -275,10 +272,6 @@ class Site extends Timber\Site {
 			'nice-search',
 			'relative-urls'
 		];
-
-		if ( $google_analytics_Id ){
-			$soil['google-analytics'] = 'UA-' . $google_analytics_Id;
-		}
 
 		add_theme_support( 'soil', $soil );
 

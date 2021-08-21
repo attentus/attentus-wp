@@ -7,7 +7,7 @@
 * [Timber](https://github.com/timber/timber), das die [Twig Template Engine](https://twig.symfony.com/) in WordPress integriert
 * und vieles mehr.
 
-## Weitere Informationen
+## Dokumentation
 
 Alles zur Benutzung, Verwaltung, Pflege, Anpassung und Weiterentwicklung findet sich im [attentus-Wiki](https://wiki.attentus.com/) unter dem Menüpunkt *attentus WP*.
 

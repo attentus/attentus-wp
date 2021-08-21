@@ -37,4 +37,4 @@ class Ajax {
 	}
 }
 
-//new Ajax();
+new Ajax();

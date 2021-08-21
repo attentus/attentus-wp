@@ -5,24 +5,56 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="theme-color" content="#ffffff">
 		<link rel="manifest" href="/manifest.json">
-		<script type="text/javascript">
-		  const ajax_url = '{{ ajax_url }}';
-		</script>
-		{{ fn('wp_head') }}
-		{% block head %}
-		{% endblock %}
+		{% include 'partials/head.twig' %}
 	</head>
 	<body class="{{ body_class }}{{ extra_body_class }}">
 		{{ fn('wp_body_open') }}
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-3 shadow">
+			<div class="container">
+				<a class="navbar-brand" href="{{ site.link }}">{{ site.name|e }}</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-menu" aria-controls="header-menu" aria-expanded="false" aria-label="{{ __("Toggle navigation", textdomain) }}">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="header-menu">
+					<ul class="menu navbar-nav me-auto mb-2 mb-lg-0">
+						{% for menu_item in menus.header.get_items %}
+							<li class="menu-item nav-item">
+								<a class="menu-item-link nav-link{{ menu_item.current ? ' active' }}" aria-current="page" href="{{ menu_item.link }}">
+									{{ menu_item }}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+					<form class="d-flex"></form>
+				</div>
+			</div>
+		</nav>
 		<header>
 			{% block header %}
 			{% endblock %}
 		</header>
-		<main>
+		<main class="py-3 py-lg-5">
+			<div class="container">
+				<div class="row">
+					{% for i in 1..3 %}
+						<div class="col-12 col-lg-4">
+							<p>Succulents jean shorts activated charcoal, scenester bushwick leggings gluten-free slow-carb. Hell of you probably haven't heard of them kitsch hot chicken roof party pitchfork taxidermy, jean shorts tofu gentrify man bun readymade wayfarers venmo. Gastropub jianbing vice paleo taxidermy slow-carb. Godard flexitarian pok pok, edison bulb taiyaki listicle 90's. Stumptown bespoke chia wolf, hell of scenester leggings trust fund sartorial synth plaid DIY. Synth af knausgaard, neutra humblebrag subway tile umami hexagon cold-pressed four loko.</p>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
 			{% block main %}
 			{% endblock %}
 		</main>
-		<footer>
+		<footer class="py-5 bg-dark text-white small">
+			<div class="container">
+				<div class="row">
+					<div class="col-8 mx-auto text-center">
+						&copy; {{ 'now'|date('Y') }} bei
+						<a href="{{ site.link }}">{{ site.name|e }}</a>
+					</div>
+				</div>
+			</div>
 			{% block footer %}
 			{% endblock %}
 		</footer>
