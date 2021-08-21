@@ -18,7 +18,7 @@ use Timber;
 use WP_Taxonomy;
 
 /** Stop executing files when accessing them directly */
-if ( ! defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
 }
 
@@ -41,10 +41,10 @@ class Taxonomy {
 	 * @param string|object $taxonomy
 	 */
 	public function __construct( $taxonomy ) {
-		if ( is_string( $taxonomy ) ) {
+		if ( is_string( $taxonomy ) ){
 			$this->taxonomy = $taxonomy;
 		} elseif ( is_object( $taxonomy ) ) {
-			$taxonomy = new WP_Taxonomy( $taxonomy, 'any' );
+			$taxonomy       = new WP_Taxonomy( $taxonomy, 'any' );
 			$this->taxonomy = $taxonomy->name;
 		}
 	}
@@ -56,8 +56,8 @@ class Taxonomy {
 	 */
 	public function get_terms(): iterable {
 		$terms = Timber::get_terms( [
-			                            'taxonomy' => $this->taxonomy
-		                            ] );
+			'taxonomy' => $this->taxonomy
+		] );
 
 		$this->terms = $terms;
 

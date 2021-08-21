@@ -42,7 +42,8 @@
     "wordpress-premium/font-awesome-pro": "^6",
     "wordpress-premium/wpseo-premium": "^16",
     "wpackagist-plugin/wordpress-seo": "^16"
-    "wpackagist-plugin/jigsaw": "0.9.*"
+    "wpackagist-plugin/jigsaw": "0.9.*",
+    "upstatement/routes": "^0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
