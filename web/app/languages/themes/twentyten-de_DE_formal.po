@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Ten package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-12-20 00:01:10+0000\n"
+"PO-Revision-Date: 2021-08-06 17:37:22+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,8 +16,69 @@ msgid "The 2010 theme for WordPress is stylish, customizable, simple, and readab
 msgstr "Das Theme 2010 für WordPress ist gut aussehend, anpassbar, einfach und gut zu lesen. Sie können es nach Ihren Wünschen anpassen, in dem Sie eigene Menüs kreieren oder ein eigenes Hintergrundbild oder Kopfzeilenbild verwenden. Das Theme hat sechs Widgetbereiche (zwei in der Sidebar, vier im Footer) und unterstützt Vorschaubilder für Artikel. "
 
 #. Theme Name of the theme
+#: block-patterns.php:20
 msgid "Twenty Ten"
 msgstr "Twenty Ten"
+
+#: block-patterns.php:58
+msgid "Relaxing at the lake after dinner"
+msgstr "Entspannen am See nach dem Abendessen"
+
+#: block-patterns.php:58
+msgid "A lake at night, with Adirondack chairs in the foreground. The sun sets in the background."
+msgstr "Ein See bei Nacht, mit Adirondack-Stühlen im Vordergrund. Im Hintergrund geht die Sonne unter."
+
+#: block-patterns.php:58
+msgid "Later that night, we went back to the lake and sat by the shore. It felt different at night; quieter, as if all of nature had gone to sleep for  a little while. The only noises were the chirp of crickets and the soft splash of the waves lapping at the shore. What a beautiful way to end the day."
+msgstr "Später in der Nacht gingen wir zurück zum See und setzten uns ans Ufer. In der Nacht war es anders, ruhiger, als ob die ganze Natur für eine Weile eingeschlafen wäre. Die einzigen Geräusche waren das Zirpen der Grillen und das leise Plätschern der Wellen, die ans Ufer schlugen. Was für eine schöne Art, den Tag zu beenden."
+
+#: block-patterns.php:58
+msgid "Nearby our cabin was a lake. The sunrise looked beautiful as it rose over the hills beyond the water, reflecting down onto the gentle morning waves. I sat on the dock and drank a cup of coffee, enjoying the cool air on my skin. The coffee kept me warm inside."
+msgstr "In der Nähe unserer Hütte befand sich ein See. Der Sonnenaufgang sah wunderschön aus, als er über den Hügeln jenseits des Wassers aufstieg und sich in den sanften Morgenwellen spiegelte. Ich saß auf dem Steg, trank eine Tasse Kaffee und genoss die kühle Luft auf meiner Haut. Der Kaffee hielt mich innerlich warm."
+
+#: block-patterns.php:58
+msgid "The lake at 6:54 AM"
+msgstr "Der See um 6:54 Uhr"
+
+#: block-patterns.php:58
+msgid "A lake with several boats docked. The sun is rising behind mountains in the background."
+msgstr "Ein See mit mehreren angedockten Booten. Die Sonne geht hinter den Bergen im Hintergrund auf."
+
+#: block-patterns.php:55
+msgid "Alternating Images"
+msgstr "Wechselnde Bilder"
+
+#: block-patterns.php:47
+msgid "— Malebo Sephodi"
+msgstr "– Malebo Sephodi"
+
+#: block-patterns.php:47
+msgid "\"Take time off&hellip; The world will not fall apart without you.\""
+msgstr "„Nehmen Sie sich eine Auszeit&hellip; Die Welt wird ohne Sie nicht zusammenbrechen.“"
+
+#: block-patterns.php:44
+msgid "Highlighted Quote"
+msgstr "Hervorgehobenes Zitat"
+
+#: block-patterns.php:36
+msgid "It’s amazing what a good weekend can do. After a tough couple weeks at work, I knew I needed to get away and be in nature. My partner and I decided to take a long weekend and stay in a cabin in the woods. We packed up after work on Friday and drove out into the country, passing through fields full of horses, old farms, and quaint little town squares. It was an idyllic drive. Eventually, we reached our destination and unpacked the car. We couldn’t wait to cook up a simple dinner and then relax by the fireplace."
+msgstr "Es ist erstaunlich, was ein gutes Wochenende bewirken kann. Nach ein paar anstrengenden Wochen auf der Arbeit wusste ich, dass ich wegkommen und in der Natur sein musste. Mein Partner und ich beschlossen, ein langes Wochenende in einer Hütte in den Wäldern zu verbringen. Wir packten am Freitag nach der Arbeit unsere Sachen und fuhren hinaus aufs Land, vorbei an Feldern voller Pferde, alten Bauernhöfen und malerischen kleinen Städten. Es war eine idyllische Fahrt. Schließlich erreichten wir unser Ziel und packten das Auto aus. Wir konnten es kaum erwarten, ein einfaches Abendessen zu kochen und uns dann am Kamin zu entspannen."
+
+#: block-patterns.php:36
+msgid "A Weekend Away"
+msgstr "Ein Wochenende unterwegs"
+
+#: block-patterns.php:36
+msgid "An old barn we passed on the drive"
+msgstr "Eine alte Scheune, an der wir auf der Fahrt vorbeikamen"
+
+#: block-patterns.php:36
+msgid "A red barn with a white roof in a field."
+msgstr "Eine rote Scheune mit weißem Dach auf einem Feld."
+
+#: block-patterns.php:33
+msgid "Introduction"
+msgstr "Einleitung"
 
 #. translators: %s: Post title.
 #: loop-attachment.php:27
@@ -166,18 +227,18 @@ msgctxt "Previous post link"
 msgid "&larr;"
 msgstr "&larr;"
 
-#: loop.php:161 loop-attachment.php:165 loop-single.php:41 loop-page.php:36
+#: loop-attachment.php:165 loop-page.php:36 loop-single.php:41 loop.php:161
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: loop.php:114 loop.php:137 loop.php:195 loop-attachment.php:83
-#: loop-attachment.php:175 loop-single.php:79 loop-page.php:41
+#: loop-attachment.php:83 loop-attachment.php:175 loop-page.php:41
+#: loop-single.php:79 loop.php:114 loop.php:137 loop.php:195
 msgid "Edit"
 msgstr "Bearbeiten"
 
 #: loop-attachment.php:76
 msgid "Link to full-size image"
-msgstr "Link zum Bild in voller Grösse"
+msgstr "Link zum Bild in Originalgröße"
 
 #. translators: %s: Image dimensions.
 #: loop-attachment.php:72
@@ -187,7 +248,7 @@ msgstr "Die gesamte Größe beträgt %s Pixel"
 #. translators: 1: CSS classes, 2: Date.
 #: loop-attachment.php:59
 msgid "<span class=\"%1$s\">Published</span> %2$s"
-msgstr "<span class=\"%1$s\">Publiziert</span> %2$s"
+msgstr "<span class=\"%1$s\">Veröffentlicht</span> %2$s"
 
 #. translators: %s: Author display name.
 #: loop-attachment.php:44
@@ -225,7 +286,8 @@ msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$
 msgstr "Dieser Beitrag wurde unter %1$s abgelegt und mit %2$s verschlagwortet. Setzen Sie ein Lesezeichen auf den <a href=\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">Permalink</a>."
 
 #. translators: %s: Author display name.
-#: loop-attachment.php:50 functions.php:618
+#. translators: %s: Author display name.
+#: functions.php:618 loop-attachment.php:50
 msgid "View all posts by %s"
 msgstr "Alle Beiträge von %s anzeigen"
 
@@ -292,7 +354,7 @@ msgstr "Ihr Kommentar wartet auf Freischaltung."
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">sagt:</span>"
 
-#: loop.php:129 loop.php:157 loop-attachment.php:161 functions.php:329
+#: functions.php:329 loop-attachment.php:161 loop.php:129 loop.php:157
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 
@@ -361,7 +423,7 @@ msgstr "Neuere Kommentare <span class=\"meta-nav\">&rarr;</span>"
 msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
 msgstr "<span class=\"meta-nav\">&larr;</span> Ältere Kommentare"
 
-#. translators: %1$s: The number of comments. %2$s: The post title.
+#. translators: 1: The number of comments, 2: The post title.
 #: comments.php:46
 msgid "%1$s Response to %2$s"
 msgid_plural "%1$s Responses to %2$s"
@@ -378,7 +440,8 @@ msgid "Category Archives: %s"
 msgstr "Archiv der Kategorie: %s"
 
 #. translators: %s: Author display name.
-#: loop-single.php:61 author.php:58
+#. translators: %s: Author display name.
+#: author.php:58 loop-single.php:61
 msgid "About %s"
 msgstr "Über %s"
 

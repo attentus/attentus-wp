@@ -12,6 +12,8 @@
  */
 
 @import 'bootstrap/bootstrap';
+@import 'partials/responsive-helper';
+@import 'partials/wp';
 @import '../../pages/404/style';
 @import '../../pages/archive/style';
 @import '../../pages/attachment/style';
@@ -32,30 +34,7 @@ $theme-colors: (
 	               'dark': $dark
                );
 
-.x {
-	background-color: $red-400;
-}
-
 body {
 	font-size: 16px;
 }
 
-.aligncenter {
-	text-align: center;
-	margin:     0 auto;
-}
-
-.alignleft {
-	text-align: left;
-}
-
-.alignrightr {
-	text-align: right;
-}
-
-.wp-caption,
-.wp-caption-text,
-.gallery-caption,
-.bypostauthor,
-.screen-reader-text {
-}

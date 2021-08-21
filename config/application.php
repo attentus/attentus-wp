@@ -33,10 +33,10 @@ $webroot_dir = $root_dir . '/web';
  * Use Dotenv to set required environment variables and load .env file in root
  */
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable( $root_dir );
-if ( file_exists( $root_dir . '/.env' ) ){
+if ( file_exists( $root_dir . '/.env' ) ) {
 	$dotenv->load();
 	$dotenv->required( [ 'WP_HOME', 'WP_SITEURL' ] );
-	if ( ! env( 'DATABASE_URL' ) ){
+	if ( ! env( 'DATABASE_URL' ) ) {
 		$dotenv->required( [ 'DB_NAME', 'DB_USER', 'DB_PASSWORD' ] );
 	}
 }
@@ -48,7 +48,7 @@ if ( file_exists( $root_dir . '/.env' ) ){
 define( 'WP_ENV', env( 'WP_ENV' ) ?: 'production' );
 define( 'WP_ENVIRONMENT_TYPE', env( 'WP_ENV' ) ?: 'production' );
 
-if ( env( 'WP_ENV' ) === 'production' ){
+if ( env( 'WP_ENV' ) === 'production' ) {
 	Config::define( 'TIMBER_CACHE_TIMEOUT', (int) env( 'TIMBER_CACHE_TIMEOUT' ) ?: 3600 );
 } else {
 	Config::define( 'TIMBER_CACHE_TIMEOUT', (int) env( 'TIMBER_CACHE_TIMEOUT' ) ?: 1 );
@@ -78,7 +78,7 @@ Config::define( 'DB_COLLATE', '' );
 
 $table_prefix = env( 'DB_PREFIX' ) ?: 'site_';
 
-if ( env( 'DATABASE_URL' ) ){
+if ( env( 'DATABASE_URL' ) ) {
 	$dsn = (object) parse_url( env( 'DATABASE_URL' ) );
 
 	Config::define( 'DB_NAME', substr( $dsn->path, 1 ) );
@@ -119,13 +119,13 @@ ini_set( 'display_errors', '0' );
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
  * See https://codex.wordpress.org/Function_Reference/is_ssl#Notes
  */
-if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ){
+if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) {
 	$_SERVER['HTTPS'] = 'on';
 }
 
 $env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
 
-if ( file_exists( $env_config ) ){
+if ( file_exists( $env_config ) ) {
 	require_once $env_config;
 }
 
@@ -134,6 +134,6 @@ Config::apply();
 /**
  * Bootstrap WordPress
  */
-if ( ! defined( 'ABSPATH' ) ){
+if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', $webroot_dir . '/wp/' );
 }

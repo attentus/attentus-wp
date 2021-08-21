@@ -27,7 +27,7 @@ use WP_Theme;
 use function Env\env;
 
 /** Stop executing files when accessing them directly */
-if ( ! defined( 'ABSPATH' ) ){
+if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access to theme files is not allowed.' );
 }
 
@@ -46,7 +46,7 @@ $default_wp_die_arguments = [
 ];
 
 /** Stop if autoload path can't be found and print error message */
-if ( ! file_exists( $autoload_path ) ){
+if ( ! file_exists( $autoload_path ) ) {
 	wp_die(
 		'The theme <strong>' . $theme->get(
 			'Name'
@@ -65,7 +65,7 @@ if ( ! file_exists( $autoload_path ) ){
 	foreach ( $required_classes as $plugin => $required_class ) {
 		$default_wp_die_arguments['link_url'] = str_replace( '%plugin%', $plugin, $default_wp_die_arguments['link_url'] );
 
-		if ( ! class_exists( $required_class ) ){
+		if ( ! class_exists( $required_class ) ) {
 			wp_die(
 				'ERROR: The plugin or library <strong>' . $plugin . '</strong> was not loaded. Please make sure all PHP Composer packages have been installed by rerunning <code>composer install</code> and <code>composer update</code>. If the error still persists, there may be a problem with PHP Composer itself.',
 				sprintf( __( 'ERROR: Could not load plugin %s', TEXTDOMAIN ), $plugin ),
@@ -74,7 +74,7 @@ if ( ! file_exists( $autoload_path ) ){
 		}
 	}
 
-	if ( ! class_exists( ACF::class ) ){
+	if ( ! class_exists( ACF::class ) ) {
 		wp_die(
 			'<strong>' . $theme->get(
 				'Name'
@@ -102,7 +102,7 @@ foreach ( $include_directories as $include_directory ) {
 	$include_directory = plugin_dir_path( __FILE__ ) . $include_directory;
 
 	/** Skip directory if it's not a valid directory */
-	if ( ! is_dir( $include_directory ) ){
+	if ( ! is_dir( $include_directory ) ) {
 		continue;
 	}
 
@@ -110,7 +110,7 @@ foreach ( $include_directories as $include_directory ) {
 	$include_files = glob( $include_directory . "/*.php" );
 	foreach ( $include_files as $include_file ) {
 		/** Skip file if file is not valid */
-		if ( ! is_file( $include_file ) ){
+		if ( ! is_file( $include_file ) ) {
 			continue;
 		}
 
@@ -126,6 +126,6 @@ foreach ( $include_directories as $include_directory ) {
 	}
 }
 
-if ( ! isset( $content_width ) ){
+if ( ! isset( $content_width ) ) {
 	$content_width = 1140;
 }
