@@ -4,6 +4,7 @@
 ![GitHub](https://img.shields.io/github/license/attentus/attentus-wp)
 ![GitHub last commit](https://img.shields.io/github/last-commit/attentus/attentus-wp)
 ![GitHub issues](https://img.shields.io/github/issues/attentus/attentus-wp)
+![POEditor](https://img.shields.io/poeditor/progress/468585/de?label=German%20translation&token=b816d6b618485b3c0609b11cc0bcb44e)
 
 **attentus WP** is a WordPress boilerplate based on [Bedrock](https://roots.io/bedrock/) by [roots.io](https://roots.io). It combines modern technologies that together provide a modern, easy-to-update and performant base for WordPress projects of any kind. attentus WP includes:
 
