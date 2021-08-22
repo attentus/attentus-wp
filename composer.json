@@ -27,7 +27,6 @@
     }
   ],
   "require": {
-    "python"
     "composer/installers": "^1.6",
     "oscarotero/env": "dev-master",
     "php": ">=7.4",
