@@ -1,5 +1,6 @@
 import subprocess
 import os
+import shutil
 
 env_path = '../.env'
 
