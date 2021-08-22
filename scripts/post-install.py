@@ -1,4 +1,5 @@
 import subprocess
+import os
 
 env_path = '../.env'
 
