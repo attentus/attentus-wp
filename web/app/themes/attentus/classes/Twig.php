@@ -83,11 +83,12 @@ class Twig extends Timber\Twig {
 	 * @since 0.0.1
 	 */
 	public function add_to_context( array $context ): array {
-		$menus                 = get_registered_nav_menus();
-		$context['site']       = new Site();
-		$context['ajax_url']   = get_admin_url( get_current_blog_id(), 'admin-ajax.php' );
-		$context['menus']      = [];
-		$context['textdomain'] = TEXTDOMAIN;
+		$menus                      = get_registered_nav_menus();
+		$context['site']            = new Site();
+		$context['ajax_url']        = get_admin_url( get_current_blog_id(), 'admin-ajax.php' );
+		$context['menus']           = [];
+		$context['textdomain']      = TEXTDOMAIN;
+		$context['custom_logo_url'] = wp_get_attachment_url( get_theme_mod( 'custom_logo' ) );
 
 		/**
 		 * Loops through all registered menus and assigns them

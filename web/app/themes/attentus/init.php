@@ -22,6 +22,7 @@
 namespace attentus\attentus_WP;
 
 use ACF;
+use JsonException;
 use Timber\Timber;
 use WP_Theme;
 use function Env\env;
@@ -129,3 +130,53 @@ foreach ( $include_directories as $include_directory ) {
 if ( ! isset( $content_width ) ){
 	$content_width = 1140;
 }
+
+/**
+ * Imports predefined ACF fields when theme is activated
+ * on for the first time.
+ *
+ * @return void
+ *
+ * @since 1.0.0
+ */
+add_action( 'after_switch_theme', static function (): void {
+	$installed_date = (int) get_option( 'attentus_wp_installed_date' );
+	$fields_path    = __DIR__ . '/install/acf-fields.json';
+
+	/** Stop if import file is not found */
+	if ( ! file_exists( $fields_path ) ){
+		return;
+	}
+
+	/** Stop if ACF fields have already been installed */
+	if ( ! $installed_date ){
+		$file_content = file_get_contents( $fields_path );
+
+		/** Try importing */
+		try {
+			$imported = 0;
+			$fields   = json_decode(
+				$file_content,
+				true,
+				strlen( $fields_path ),
+				JSON_THROW_ON_ERROR
+			);
+
+			/** Import each element */
+			foreach ( $fields as $field ) {
+				if ( acf_import_field_group( $field ) ){
+					$imported++;
+				}
+			}
+
+			/** Set option to remember that the import was successful to avoid duplicates */
+			if ( $imported === count( $fields ) ){
+				add_option( 'attentus_wp_installed_date', current_time( 'timestamp' ) );
+			}
+		}
+		catch ( JsonException $e ) {
+			/** Display error message */
+			d( $e );
+		}
+	}
+} );

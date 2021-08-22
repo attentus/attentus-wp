@@ -40,7 +40,7 @@ class Hooks {
 		}
 
 		if ( get_field( 'allow_svg_uploads', 'options' ) === true ){
-			add_filter( 'upload_mimes', [ $this, 'filter_add_mime_types' ] );
+			add_filter( 'upload_mimes', [ $this, 'filter_add_mime_types' ], 25 );
 			add_filter( 'wp_check_filetype_and_ext', [ $this, 'filter_check_file_types' ], 10, 4 );
 		}
 
@@ -127,30 +127,25 @@ class Hooks {
 		return (int) get_field( 'jpeg_quality', 'options' );
 	}
 
-	/**
-	 * @param $data
-	 * @param $file
-	 * @param $file_name
-	 * @param $mimes
-	 *
-	 * @return array
-	 *
-	 * @since 0.0.1
-	 */
-	public function filter_check_file_types( $data, $file, $file_name, $mimes ): array {
-		global $wp_version;
+	public function filter_check_file_types( $checked, $file, $filename, $mimes ): array {
+		if ( ! $checked['type'] ){
+			$check_filetype  = wp_check_filetype( $filename, $mimes );
+			$ext             = $check_filetype['ext'];
+			$type            = $check_filetype['type'];
+			$proper_filename = $filename;
 
-		if ( $wp_version !== '4.7.1' ){
-			return $data;
+			if ( $ext !== 'svg' && $type && 0 === strpos( $type, 'image/' ) ){
+				$ext = $type = false;
+			}
+
+			$checked = compact(
+				'ext',
+				'type',
+				'proper_filename'
+			);
 		}
 
-		$filetype = wp_check_filetype( $file_name, $mimes );
-
-		return [
-			'ext'             => $filetype['ext'],
-			'type'            => $filetype['type'],
-			'proper_filename' => $data['proper_filename']
-		];
+		return $checked;
 	}
 
 	/**
@@ -164,7 +159,10 @@ class Hooks {
 	 * @since 0.0.1
 	 */
 	public function filter_add_mime_types( $mimes ): array {
-		$mimes['svg'] = 'image/svg+xml';
+		if ( current_user_can( 'administrator' ) ){
+			$mimes['svg']  = 'image/svg+xml';
+			$mimes['svgz'] = 'image/svg+xml';
+		}
 
 		return $mimes;
 	}

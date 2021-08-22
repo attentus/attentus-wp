@@ -11,7 +11,13 @@
 		{{ fn('wp_body_open') }}
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-3 shadow">
 			<div class="container">
-				<a class="navbar-brand" href="{{ site.link }}">{{ site.name|e }}</a>
+				<a class="navbar-brand" href="{{ site.link }}">
+					{% if fn('has_custom_logo') and custom_logo_url is not empty %}
+						<img src="{{ custom_logo_url }}" alt="{{ site.name|e }}" class="site-logo custom-site-logo" width="auto" height="30px">
+					{% else %}
+						{{ site.name|e }}
+					{% endif %}
+				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-menu" aria-controls="header-menu" aria-expanded="false" aria-label="{{ __("Toggle navigation", textdomain) }}">
 					<span class="navbar-toggler-icon"></span>
 				</button>

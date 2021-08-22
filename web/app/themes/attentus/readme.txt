@@ -6,7 +6,7 @@ Requires PHP:       7.2
 License:            GPLv3 or later
 License URI:        http://www.gnu.org/licenses/gpl-3.0.html
 
-...
+attentus WP a Bootstrap-5-based starter theme for the boilerplate attentus WP with support for Twig, Timber, environments, PHP Composer, and more.
 
 == Description ==
 ...

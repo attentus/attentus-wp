@@ -44,10 +44,13 @@
         <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.js" />
         <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.min.js" />
         <item url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/plugins/svg-support/js/min/svgs-admin-notice-update-min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/plugins/svg-support/js/min/svgs-inline-min.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/plugins/svg-support/js/svgs-admin-notice-update.min.js" />
+        <item url="file://$PROJECT_DIR$/web/app/plugins/svg-support/js/svgs-inline.min.js" />
         <item url="file://$PROJECT_DIR$/web/app/themes/attentus/scripts/js/admin.min.js" />
         <item url="file://$PROJECT_DIR$/web/app/themes/attentus/scripts/js/bootstrap.min.js" />
         <item url="file://$PROJECT_DIR$/web/app/themes/attentus/scripts/js/main.min.js" />
-        <item url="file://$PROJECT_DIR$/web/app/themes/attentus/snippets/scripts.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -93,10 +96,13 @@
       <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.js" />
       <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.min.js" />
       <root url="file://$PROJECT_DIR$/web/app/mu-plugins/advanced-custom-fields-pro/assets/inc/timepicker/jquery-ui-timepicker-addon.min.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/plugins/svg-support/js/min/svgs-admin-notice-update-min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/plugins/svg-support/js/min/svgs-inline-min.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/plugins/svg-support/js/svgs-admin-notice-update.min.js" />
+      <root url="file://$PROJECT_DIR$/web/app/plugins/svg-support/js/svgs-inline.min.js" />
       <root url="file://$PROJECT_DIR$/web/app/themes/attentus/scripts/js/admin.min.js" />
       <root url="file://$PROJECT_DIR$/web/app/themes/attentus/scripts/js/bootstrap.min.js" />
       <root url="file://$PROJECT_DIR$/web/app/themes/attentus/scripts/js/main.min.js" />
-      <root url="file://$PROJECT_DIR$/web/app/themes/attentus/snippets/scripts.min.js" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
