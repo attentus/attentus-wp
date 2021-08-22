@@ -23,7 +23,7 @@ Please direct your questions, feature requests and bug findings at [GitLab's iss
 
 ## Development
 
-*attentus WP* is an in-house and continuously developing project by [attentus Gesellschaft für Marketing und Kommunikation mbH](https://www.attentus.com/) and is subject to its terms of use. It is being developed by [Kolja Nolte](mailto:nolte@attentus.com).
+*attentus WP* is an in-house project which is being developed continuously by [attentus Gesellschaft für Marketing und Kommunikation mbH](https://www.attentus.com/) and is subject to its terms of use. Current lead develpoer is [Kolja Nolte](mailto:nolte@attentus.com).
 
 ## License
 
