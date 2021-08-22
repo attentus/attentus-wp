@@ -11,10 +11,16 @@
  * @author Kolja Nolte <nolte@attentus.com>
  */
 
+.wp-block-table {
+	width: 100%;
+	@extend .table;
+}
+
 @import 'bootstrap/bootstrap';
 @import 'partials/responsive-helper';
 @import 'partials/wp';
 @import 'partials/fonts';
+@import 'partials/blocks';
 @import '../../pages/404/style';
 @import '../../pages/archive/style';
 @import '../../pages/attachment/style';
@@ -46,3 +52,4 @@ p {
 a {
 	text-decoration: none;
 }
+
