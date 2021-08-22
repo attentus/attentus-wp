@@ -2,11 +2,11 @@ import subprocess
 import os
 import shutil
 
-env_path = '../.env'
+env_path = '.env'
 
 if not os.path.exists(env_path):
     shutil.copy(
-        '../.env.example',
+        '.env.example',
         env_path
     )
 
