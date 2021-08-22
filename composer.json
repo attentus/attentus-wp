@@ -5,6 +5,7 @@
   "license": "GPL-3.0-or-later",
   "description": "attentus WP is a Bedrock-based boilerplate for WordPress with modern development tools, easier configuration, and an improved folder structure",
   "homepage": "https://www.attentus.com",
+  "author": "Kolja Nolte",
   "authors": [
     {
       "name": "Kolja Nolte",
