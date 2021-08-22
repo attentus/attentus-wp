@@ -1,24 +1,29 @@
 # attentus WP
 
-**attentus WP** ist ein WordPress-Boilerplate basierend auf [Bedrock](https://roots.io/bedrock/) von [roots.io](https://roots.io). Es kombiniert moderne Technologien, die zusammen eine moderne, pflegeleichte und leistungsstarke Basis für WordPress-Projekte jeglicher Art bieten. Dazu gehören u.a.:
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/attentus/attentus-wp?include_prereleases)
+![GitHub](https://img.shields.io/github/license/attentus/attentus-wp)
+![GitHub last commit](https://img.shields.io/github/last-commit/attentus/attentus-wp)
+![GitHub issues](https://img.shields.io/github/issues/attentus/attentus-wp)
 
-* Entwicklung auf [Environment-Basis](https://symfony.com/components/Dotenv),
-* Dependency Manager [PHP Composer](https://getcomposer.org/), der die wichtigsten Plugins und Tools bei jeder Installation gleich mitliefert,
-* [Timber](https://github.com/timber/timber), das die [Twig Template Engine](https://twig.symfony.com/) in WordPress integriert
-* und vieles mehr.
+**attentus WP** is a WordPress boilerplate based on [Bedrock](https://roots.io/bedrock/) by [roots.io](https://roots.io). It combines modern technologies that together provide a modern, easy-to-update and performant base for WordPress projects of any kind. attentus WP includes:
 
-## Dokumentation
+* [Environment-based](https://symfony.com/components/Dotenv) development structure,
+* Dependency manager [PHP Composer](https://getcomposer.org/) which manages all plugins and third-party software,
+* [Timber](https://github.com/timber/timber), which integrates the [Twig Template Engine](https://twig.symfony.com/) in WordPress,
+* and more.
 
-Alles zur Benutzung, Verwaltung, Pflege, Anpassung und Weiterentwicklung findet sich im [attentus-Wiki](https://wiki.attentus.com/) unter dem Menüpunkt *attentus WP*.
+## Documentation
+
+For more information on how to use attentus WP, please see the [official documentation](#) or - for attentus members - the [internal Wiki](https://wiki.attentus.com/).
 
 ## Support
 
-Support steht außerhalb der Agentur nur eingeschränkt zur Verfügung und geschieht über [GitLabs Ticketsystem](https://gitlab.com/attentus/intern/attentus-wp/-/issues) oder per [E-Mail](mailto:nolte@attentus.com).
+Please direct your questions, feature requests and bug findings at [GitLab's issue system](https://gitlab.com/attentus/intern/attentus-wp/-/issues) or send an [email](mailto:nolte@attentus.com).
 
-## Entwicklung
+## Development
 
-*attentus WP* ist ein hauseigenes und fortlaufend weiterentwickeltes Produkt von [attentus Gesellschaft für Marketing und Kommunikation mbH](https://www.attentus.com/) und unterliegt dessen Lizenzbestimmungen. Leitender Entwickler ist derzeit (Stand 2021) [Kolja Nolte](mailto:nolte@attentus.com).
+*attentus WP* is an in-house and continuously developing project by [attentus Gesellschaft für Marketing und Kommunikation mbH](https://www.attentus.com/) and is subject to its terms of use. It is being developed by [Kolja Nolte](mailto:nolte@attentus.com).
 
-## Lizenz
+## License
 
-Siehe *LICENSE.md*.
+See *LICENSE.md*.
