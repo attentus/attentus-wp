@@ -1,6 +1,7 @@
 {
   "name": "attentus/attentus-wp",
   "type": "project",
+  "version": "1.0.0",
   "license": "GPL-3.0-or-later",
   "description": "attentus WP is a Bedrock-based boilerplate for WordPress with modern development tools, easier configuration, and an improved folder structure",
   "homepage": "https://www.attentus.com",
@@ -26,7 +27,7 @@
     }
   ],
   "require": {
-    "composer/installers": "^1.11",
+    "composer/installers": "^1.6",
     "oscarotero/env": "dev-master",
     "php": ">=7.4",
     "ext-json": "*",
