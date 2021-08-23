@@ -20,7 +20,7 @@ use Twig\TwigFilter;
 use Twig\TwigFunction;
 
 /** Stop executing files when accessing them directly */
-if ( ! defined( 'ABSPATH' ) ){
+if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access to theme files is not allowed.' );
 }
 
@@ -43,7 +43,7 @@ class Twig extends Timber\Twig {
 	public function set_twig_options( array $options ): array {
 		$options['cache'] = false;
 
-		if ( WP_ENV === 'production' ){
+		if ( WP_ENV === 'production' ) {
 			$options['cache'] = true;
 		}
 
@@ -62,7 +62,7 @@ class Twig extends Timber\Twig {
 			'Post' => Timber\Post::class
 		];
 
-		return (array) array_merge( $class_map, $new_class_map );
+		return array_merge( $class_map, $new_class_map );
 	}
 
 	public function class_map_user( $default_class ) {
@@ -83,23 +83,8 @@ class Twig extends Timber\Twig {
 	 * @since 0.0.1
 	 */
 	public function add_to_context( array $context ): array {
-		$menus                      = get_registered_nav_menus();
-		$context['site']            = new Site();
-		$context['ajax_url']        = get_admin_url( get_current_blog_id(), 'admin-ajax.php' );
-		$context['menus']           = [];
-		$context['textdomain']      = TEXTDOMAIN;
-		$context['custom_logo_url'] = wp_get_attachment_url( get_theme_mod( 'custom_logo' ) );
-
-		/**
-		 * Loops through all registered menus and assigns them
-		 * to the global context.
-		 *
-		 * @var string $menu        Menu name
-		 * @var string $description Menu description
-		 */
-		foreach ( $menus as $menu => $description ) {
-			$context['menus'][$menu] = Timber::get_menu( $menu );
-		}
+		$context['site']     = new Site();
+		$context['ajax_url'] = get_admin_url( 0, 'admin-ajax.php' );
 
 		return $context;
 	}
@@ -120,15 +105,7 @@ class Twig extends Timber\Twig {
 			} )
 		);
 
-		$twig->addFilter(
-			new TwigFilter( 'int', [ $this, 'twig_filter_int' ] )
-		);
-
 		return $twig;
-	}
-
-	public function twig_filter_int( $string ) {
-		return (int) $string;
 	}
 
 	/**
@@ -153,7 +130,7 @@ class Twig extends Timber\Twig {
 		);
 
 		$twig->addFunction(
-			new TwigFunction( 'taxonomy', [ $this, 'twig_function_taxonomy' ] )
+			new TwigFunction( 'Taxonomy', [ $this, 'twig_function_taxonomy' ] )
 		);
 
 		$twig->addFunction(
@@ -167,27 +144,10 @@ class Twig extends Timber\Twig {
 		);
 
 		$twig->addFunction(
-			new TwigFunction( 'meta', [ $this, 'twig_function_meta' ] )
+			new TwigFunction( 'nonce', [ $this, 'twig_function_nonce' ] )
 		);
 
 		return $twig;
-	}
-
-	/**
-	 * @param string $field   Name of the field
-	 * @param mixed  $post_id ID or 'options' if field is on ACF options page
-	 *
-	 * @return mixed
-	 */
-	public function twig_function_meta( string $field, $post_id = 0 ) {
-		$post_id = $post_id ?: (int) get_the_ID();
-		$value   = get_post_meta( $field, $post_id, true );
-
-		if ( function_exists( 'get_field' ) ){
-			$value = get_field( $field, $post_id );
-		}
-
-		return $value;
 	}
 
 	/**
@@ -225,11 +185,35 @@ class Twig extends Timber\Twig {
 	 * @since 0.0.1
 	 */
 	public function twig_function_d( $parameter ): void {
-		if ( function_exists( 'd' ) ){
+		if ( function_exists( 'd' ) ) {
 			d( $parameter );
 		} else {
 			var_dump( $parameter );
 		}
+	}
+
+	/**
+	 * Creates a nonce for a specified action and returns either the nonce ID
+	 * or a hidden HTML form input field.
+	 *
+	 * @param string $action The action connected to the nonce
+	 * @param bool   $html   Whether the nonce is being returned as HTML field or only as ID
+	 * @param string $name   The HTML name (and ID) of the nonce field (if $html is true)
+	 *
+	 * @return string
+	 *
+	 * @since 1.0.0
+	 */
+	public function twig_function_nonce( string $action, bool $html = true, string $name = '' ): string {
+		$name = $name ?: sanitize_title_for_query( str_replace( '-', '_', $action ) ) . '_nonce';
+
+		if ( $html ) {
+			$output = wp_nonce_field( $action, $name, true, false );
+		} else {
+			$output = wp_create_nonce( $action );
+		}
+
+		return (string) $output;
 	}
 }
 

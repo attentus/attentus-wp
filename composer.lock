@@ -4,68 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2475238854bf9ac505d6f4a4e3247b20",
+    "content-hash": "1051c7c41b901016ed847c4137b1d31a",
     "packages": [
-        {
-            "name": "altorouter/altorouter",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dannyvankooten/AltoRouter.git",
-                "reference": "127f6e96998708a31ef32252985bea82e3b03888"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dannyvankooten/AltoRouter/zipball/127f6e96998708a31ef32252985bea82e3b03888",
-                "reference": "127f6e96998708a31ef32252985bea82e3b03888",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "dev-master",
-                "phpunit/phpunit": "5.7.*",
-                "squizlabs/php_codesniffer": "3.4.2"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "AltoRouter.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Danny van Kooten",
-                    "email": "dannyvankooten@gmail.com",
-                    "homepage": "http://dannyvankooten.com/"
-                },
-                {
-                    "name": "Koen Punt",
-                    "homepage": "https://github.com/koenpunt"
-                },
-                {
-                    "name": "niahoo",
-                    "homepage": "https://github.com/niahoo"
-                }
-            ],
-            "description": "A lightning fast router for PHP",
-            "homepage": "https://github.com/dannyvankooten/AltoRouter",
-            "keywords": [
-                "lightweight",
-                "router",
-                "routing"
-            ],
-            "support": {
-                "issues": "https://github.com/dannyvankooten/AltoRouter/issues",
-                "source": "https://github.com/dannyvankooten/AltoRouter/tree/2.0.1"
-            },
-            "time": "2019-11-23T11:01:41+00:00"
-        },
         {
             "name": "composer/installers",
             "version": "v1.11.0",
@@ -1307,62 +1247,6 @@
             "time": "2021-05-16T12:12:47+00:00"
         },
         {
-            "name": "upstatement/routes",
-            "version": "0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Upstatement/routes.git",
-                "reference": "9294660710ba5cab48a62002210f74889c511701"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Upstatement/routes/zipball/9294660710ba5cab48a62002210f74889c511701",
-                "reference": "9294660710ba5cab48a62002210f74889c511701",
-                "shasum": ""
-            },
-            "require": {
-                "altorouter/altorouter": "^2.0",
-                "composer/installers": "~1.0",
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "5.7.16",
-                "satooshi/php-coveralls": "*",
-                "wp-cli/wp-cli": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Routes": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jared Novack",
-                    "email": "jared@upstatement.com",
-                    "homepage": "http://upstatement.com"
-                }
-            ],
-            "description": "Manage rewrites and routes in WordPress with this dead-simple plugin",
-            "homepage": "http://routes.upstatement.com",
-            "keywords": [
-                "redirects",
-                "rewrite",
-                "routes",
-                "routing"
-            ],
-            "support": {
-                "issues": "https://github.com/jarednova/routes/issues",
-                "source": "https://github.com/jarednova/routes",
-                "wiki": "https://github.com/jarednova/routes/wiki"
-            },
-            "time": "2020-08-14T20:20:29+00:00"
-        },
-        {
             "name": "vlucas/phpdotenv",
             "version": "v5.3.0",
             "source": {
@@ -1557,24 +1441,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/jigsaw/"
-        },
-        {
-            "name": "wpackagist-plugin/wordpress-seo",
-            "version": "16.9",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/16.9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.16.9.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
         }
     ],
     "packages-dev": [
