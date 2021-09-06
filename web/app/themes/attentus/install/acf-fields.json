@@ -27,7 +27,7 @@
         "label": ".svg-Uploads erlauben",
         "name": "allow_svg_uploads",
         "type": "true_false",
-        "instructions": "Erlaubt das Hochladen von .svg-Dateien.",
+        "instructions": "Erlaubt das Hochladen von .svg-Dateien. Das Aktivieren dieser Option kann ein Sicherheitsrisiko darstellen und sollte vermieden werden, wenn möglich.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -43,14 +43,14 @@
       },
       {
         "key": "field_61066a6377e51",
-        "label": "Admin-Seiten ausblenden",
-        "name": "removed_admin_pages",
+        "label": "Standard-Admin-Seiten ausblenden",
+        "name": "removed_default_admin_pages",
         "type": "select",
-        "instructions": "Wähle die Seiten aus, die nicht im Administratorenmenü erscheinen sollen.",
+        "instructions": "Wähle die Standard-Seiten aus, die nicht im Administratorenmenü erscheinen sollen.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
-          "width": "",
+          "width": "50",
           "class": "",
           "id": ""
         },
@@ -74,6 +74,25 @@
         "ajax": 0,
         "return_format": "value",
         "placeholder": ""
+      },
+      {
+        "key": "field_61367eb47a251",
+        "label": "Benutzerdefinierte Admin-Seiten ausblenden",
+        "name": "removed_custom_admin_pages",
+        "type": "text",
+        "instructions": "Eine durch Kommas getrennte Liste von Seiten-Slugs, die ausgeblendet werden sollen.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "placeholder": "Slugs eingeben...",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
       },
       {
         "key": "field_61067ca5e87f4",
@@ -161,7 +180,7 @@
         "label": "Google Analytics ID",
         "name": "google_analytics_id",
         "type": "text",
-        "instructions": "Google Analytics Property ID.",
+        "instructions": "Mess- oder Property-ID für Tracking mit Google Analytics.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -171,7 +190,7 @@
         },
         "default_value": "",
         "placeholder": "ID eingeben...",
-        "prepend": "UA-",
+        "prepend": "G-\/UA-",
         "append": "",
         "maxlength": 10
       }
@@ -193,5 +212,144 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Werte für Google-Produkte"
+  },
+  {
+    "key": "group_6136807e3760c",
+    "title": "Styles und Scripts",
+    "fields": [
+      {
+        "key": "field_613680894c1b3",
+        "label": "CSS",
+        "name": "custom_css",
+        "type": "group",
+        "instructions": "Bindet den eingegeben CSS-Code auf allen Seiten ein.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "sub_fields": [
+          {
+            "key": "field_613680974c1b4",
+            "label": "Code",
+            "name": "code",
+            "type": "textarea",
+            "instructions": "CSS-Code, der eingebunden wird.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "z.B. .author { font-weight: 700; }",
+            "maxlength": "",
+            "rows": 8,
+            "new_lines": ""
+          },
+          {
+            "key": "field_613680b54c1b5",
+            "label": "Ladeposition",
+            "name": "load_position",
+            "type": "button_group",
+            "instructions": "CSS-Code im Footer kann zuvor definierte Styles überschreiben.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "choices": {
+              "header": "Header",
+              "footer": "Footer (Standard)"
+            },
+            "allow_null": 0,
+            "default_value": "footer",
+            "layout": "horizontal",
+            "return_format": "value"
+          }
+        ]
+      },
+      {
+        "key": "field_613681afabbba",
+        "label": "JavaScript",
+        "name": "custom_js",
+        "type": "group",
+        "instructions": "Bindet den eingegeben JavaScript-Code auf allen Seiten ein.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "sub_fields": [
+          {
+            "key": "field_613681afabbbb",
+            "label": "Code",
+            "name": "code",
+            "type": "textarea",
+            "instructions": "JS-Code, der eingebunden wird.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "z.B. jQuery('#button').hide();",
+            "maxlength": "",
+            "rows": 8,
+            "new_lines": ""
+          },
+          {
+            "key": "field_613681afabbbc",
+            "label": "Ladeposition",
+            "name": "load_position",
+            "type": "button_group",
+            "instructions": "Manche Scripts müssen <strong>nach<\/strong> anderen geladen werden.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "choices": {
+              "header": "Header",
+              "footer": "Footer (Standard)"
+            },
+            "allow_null": 0,
+            "default_value": "footer",
+            "layout": "horizontal",
+            "return_format": "value"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "acf-options-attentus-wp"
+        }
+      ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Benutzerdefiniertes CSS und JavaScript einbinden"
   }
 ]

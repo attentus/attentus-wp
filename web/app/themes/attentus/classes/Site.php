@@ -15,6 +15,8 @@
 namespace attentus\attentus_WP;
 
 use Jigsaw;
+use Roots\WPConfig\Config;
+use stdClass;
 use Timber;
 
 /** Stop executing files when accessing them directly */
@@ -110,8 +112,8 @@ class Site extends Timber\Site {
 			Jigsaw::show_notice(
 				__(
 					sprintf(
-						'<strong>WARNUNG:</strong> Die Option "Suchmaschinen davon abhalten, diese Website zu indexieren" ist <strong>aktiviert</strong>. <a href="%s">Jetzt deaktivieren</a>',
-						get_admin_url( 0, 'options-reading.php#blog_public' )
+						'<strong>WARNING:</strong> The setting "Discourage search engines from indexing this site" ist <strong>enabled</strong>. <a href="%s">Click here</a> to deactivate it now.',
+						get_admin_url( get_current_blog_id(), 'options-reading.php#blog_public' )
 					),
 					TEXTDOMAIN
 				),
@@ -157,9 +159,9 @@ class Site extends Timber\Site {
 			return;
 		}
 
-		$optionOne         = new \stdClass();
-		$optionOne->label  = 'Timber-Cache leeren';
-		$optionOne->action = function () {
+		$optionOne         = new stdClass();
+		$optionOne->label  = __( "Clear Timber cache", TEXTDOMAIN );
+		$optionOne->action = static function () {
 			global $root_dir;
 
 			$loader = new Timber\Loader();
@@ -170,7 +172,9 @@ class Site extends Timber\Site {
 			}
 		};
 
-		Jigsaw::add_toolbar_group( __( "Quick Action", TEXTDOMAIN ), [ $optionOne ] );
+		if ( Config::get( 'TIMBER_CACHE_TIMEOUT' ) > 1 ){
+			Jigsaw::add_toolbar_group( __( "Quick Action", TEXTDOMAIN ), [ $optionOne ] );
+		}
 	}
 
 	/**
@@ -238,11 +242,11 @@ class Site extends Timber\Site {
 		}
 
 		acf_add_options_page( [
-			'page_title'  => __( 'attentus WP', TEXTDOMAIN ),
-			'menu_title'  => __( 'attentus WP', TEXTDOMAIN ),
-			'parent_slug' => 'themes.php',
-			'redirect'    => false
-		] );
+			                      'page_title'  => __( 'attentus WP', TEXTDOMAIN ),
+			                      'menu_title'  => __( 'attentus WP', TEXTDOMAIN ),
+			                      'parent_slug' => 'themes.php',
+			                      'redirect'    => false
+		                      ] );
 	}
 
 	/**
@@ -310,10 +314,13 @@ class Site extends Timber\Site {
 	 * @since 0.0.1
 	 */
 	public function remove_admin_pages(): void {
-		$admin_pages = (array) get_field( 'removed_admin_pages', 'options' );
+		$default_admin_pages = (array) get_field( 'removed_default_admin_pages', 'options' );
+		$custom_admin_pages  = (string) get_field( 'removed_custom_admin_pages', 'options' );
+		$custom_admin_pages  = explode( ',', $custom_admin_pages );
+		$admin_pages         = array_merge( $default_admin_pages, $custom_admin_pages );
 
 		foreach ( $admin_pages as $admin_page ) {
-			remove_menu_page( $admin_page );
+			remove_menu_page( trim( $admin_page ) );
 		}
 	}
 }

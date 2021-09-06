@@ -9,7 +9,7 @@
 	</head>
 	<body class="{{ body_class }}{{ extra_body_class }}">
 		{{ fn('wp_body_open') }}
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-3 shadow">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-3 shadow-sm">
 			<div class="container">
 				<a class="navbar-brand" href="{{ site.link }}">
 					{% if fn('has_custom_logo') and custom_logo_url is not empty %}
@@ -40,7 +40,6 @@
 			{% endblock %}
 		</header>
 		<main class="py-3 py-lg-5">
-			<
 			{% block main %}
 			{% endblock %}
 		</main>

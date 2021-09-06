@@ -34,6 +34,8 @@ class Hooks {
 	 */
 	public function __construct() {
 		$this->site = new Timber\Site();
+		$this->load_custom_css();
+		$this->load_custom_js();
 
 		if ( get_field( 'random_file_names', 'options' ) === true ){
 			add_filter( 'sanitize_file_name', [ $this, 'filter_rename_uploaded_file' ], 10, 1 );
@@ -59,6 +61,54 @@ class Hooks {
 		}
 
 		add_filter( 'get_custom_logo', [ $this, 'filter_custom_logo' ] );
+	}
+
+	/**
+	 * @since 1.0.1
+	 */
+	public function load_custom_css(): void {
+		$custom_css      = get_field( 'custom_css', 'options' );
+		$custom_css_code = $custom_css['code'];
+
+		if ( $custom_css_code && strlen( $custom_css_code ) > 3 ){
+			if ( $custom_css['load_position'] === 'footer' ){
+				add_action( 'wp_footer', static function () use ( $custom_css_code ) {
+					?>
+					<style><?= $custom_css_code ?></style>
+					<?php
+				} );
+			} else {
+				add_action( 'wp_head', static function () use ( $custom_css_code ) {
+					?>
+					<style><?= $custom_css_code ?></style>
+					<?php
+				} );
+			}
+		}
+	}
+
+	/**
+	 * @since 1.0.1
+	 */
+	public function load_custom_js(): void {
+		$custom_js      = get_field( 'custom_js', 'options' );
+		$custom_js_code = $custom_js['code'];
+
+		if ( $custom_js_code && strlen( $custom_js_code ) > 3 ){
+			if ( $custom_js['load_position'] === 'footer' ){
+				add_action( 'wp_footer', static function () use ( $custom_js_code ) {
+					?>
+					<script type="text/javascript"><?= $custom_js_code ?></script>
+					<?php
+				} );
+			} else {
+				add_action( 'wp_head', static function () use ( $custom_js_code ) {
+					?>
+					<script type="text/javascript"><?= $custom_js_code ?></script>
+					<?php
+				} );
+			}
+		}
 	}
 
 	/**

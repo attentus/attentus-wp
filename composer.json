@@ -29,7 +29,7 @@
   "require": {
     "composer/installers": "^1.6",
     "oscarotero/env": "dev-master",
-    "php": ">=7.4",
+    "php": ">=7.2",
     "ext-json": "*",
     "roots/bedrock-autoloader": "^1.0",
     "roots/soil": "^4",

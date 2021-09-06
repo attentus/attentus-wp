@@ -2,6 +2,7 @@
 web/app/plugins/*
 !web/app/plugins/.gitkeep
 web/app/mu-plugins/*
+!web/app/mu-plugins/*.php
 web/app/upgrade
 web/app/languages/*
 web/app/uploads/*backupbuddy*
