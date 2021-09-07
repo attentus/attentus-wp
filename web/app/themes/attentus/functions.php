@@ -150,7 +150,10 @@ function rglob( string $pattern, $flags = null ): array {
 	foreach ( glob( dirname( $pattern ) . '/*', GLOB_ONLYDIR | GLOB_NOSORT ) as $dir ) {
 		$files = wp_parse_args(
 			$files,
-			rglob( $dir . '/' . basename( $pattern ), $flags )
+			rglob(
+				$dir . '/' . basename( $pattern ),
+				$flags
+			)
 		);
 	}
 

@@ -1,4 +1,6 @@
 {% set google_analytics_id = meta('google_analytics_id', 'options') %}
+<link rel="icon" type="image/png" href="{{ site.link }}/assets/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="{{ site.link }}/assets/favicon-192x192.png" sizes="192x192">
 <script type="text/javascript">
 	const ajax_url = '{{ ajax_url }}';
 </script>
@@ -13,7 +15,6 @@
 	   }
 
 	   gtag('js', new Date());
-
 	   gtag('config', '{{ google_analytics_id }}');
 	</script>
 {% endif %}
