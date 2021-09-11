@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: attentus\n"
-"POT-Creation-Date: 2021-08-21 22:00+0200\n"
+"POT-Creation-Date: 2021-09-11 22:48+0200\n"
 "PO-Revision-Date: 2021-08-21 21:27+0200\n"
 "Last-Translator: Kolja Nolte <kolja.nolte@gmail.com>\n"
 "Language-Team: Kolja Nolte <kolja.nolte@gmail.com>\n"
@@ -16,29 +16,34 @@ msgstr ""
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: classes/Site.php:74
-msgid "Menü im Header"
+#: classes/Site.php:83
+msgid "Menu in the header"
 msgstr ""
 
-#: classes/Site.php:79
-msgid "Menü im Footer"
+#: classes/Site.php:88
+msgid "Menu in the footer"
 msgstr ""
 
-#: classes/Site.php:128
+#: classes/Site.php:137
 msgctxt "Date of user registration"
-msgid "Registriert"
+msgid "Registered"
 msgstr ""
 
-#: classes/Site.php:166
-msgid "Schnellaktionen"
+#: classes/Site.php:163
+msgid "Clear Timber cache"
 msgstr ""
 
-#: classes/Site.php:234 classes/Site.php:235
+#: classes/Site.php:176
+msgid "Quick Action"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+#: classes/Site.php:245 classes/Site.php:246
 msgid "attentus WP"
 msgstr ""
 
@@ -151,27 +156,23 @@ msgctxt ""
 msgid " list"
 msgstr ""
 
-#: init.php:71
+#: init.php:72
 #, php-format
 msgid "ERROR: Could not load plugin %s"
 msgstr ""
 
-#: views/base.twig:18
-msgid "test"
-msgstr ""
-
-#. Theme Name of the plugin/theme
-msgid "attentus"
+#: views/base.twig:21
+msgid "Toggle navigation"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://www.attentus.com"
+msgid "https://www.attentus.com/attentus-wp/"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Ein WordPress Boilerplate basierend auf Bedrock mit PHP Composer und mit "
-"Twig-Unterstützung durch Timber"
+"attentus WP a Bootstrap 5-based starter theme for the boilerplate attentus "
+"WP with support for Twig, Timber, environments, PHP Composer, and more."
 msgstr ""
 
 #. Author of the plugin/theme

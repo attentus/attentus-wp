@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: attentus\n"
-"POT-Creation-Date: 2021-08-21 22:04+0200\n"
-"PO-Revision-Date: 2021-08-21 22:08+0200\n"
+"POT-Creation-Date: 2021-09-11 22:49+0200\n"
+"PO-Revision-Date: 2021-09-11 22:50+0200\n"
 "Last-Translator: Kolja Nolte <kolja.nolte@gmail.com>\n"
 "Language-Team: Kolja Nolte <kolja.nolte@gmail.com>\n"
 "Language: de_DE\n"
@@ -21,24 +21,29 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: classes/Site.php:81
+#: classes/Site.php:83
 msgid "Menu in the header"
 msgstr "Menü im Header"
 
-#: classes/Site.php:86
+#: classes/Site.php:88
 msgid "Menu in the footer"
 msgstr "Menü im Footer"
 
-#: classes/Site.php:135
+#: classes/Site.php:137
 msgctxt "Date of user registration"
 msgid "Registered"
 msgstr "Registrieert"
 
-#: classes/Site.php:173
+#: classes/Site.php:163
+msgid "Clear Timber cache"
+msgstr "Timber-Cache leeren"
+
+#: classes/Site.php:176
 msgid "Quick Action"
 msgstr "Schnellaktion"
 
-#: classes/Site.php:241 classes/Site.php:242
+#. Theme Name of the plugin/theme
+#: classes/Site.php:245 classes/Site.php:246
 msgid "attentus WP"
 msgstr "attentus WP"
 
@@ -151,26 +156,27 @@ msgctxt ""
 msgid " list"
 msgstr " Liste"
 
-#: init.php:71
+#: init.php:72
 #, php-format
 msgid "ERROR: Could not load plugin %s"
 msgstr "FEHLER: Plugin %s konnte nicht geladen werden"
 
-#. Theme Name of the plugin/theme
-msgid "attentus"
-msgstr "attentus"
+#: views/base.twig:21
+msgid "Toggle navigation"
+msgstr "Navigation umschalten"
 
 #. Theme URI of the plugin/theme
-msgid "https://www.attentus.com"
-msgstr "https://www.attentus.com"
+msgid "https://www.attentus.com/attentus-wp/"
+msgstr "https://www.attentus.com/attentus-wp/"
 
 #. Description of the plugin/theme
 msgid ""
-"Ein WordPress Boilerplate basierend auf Bedrock mit PHP Composer und mit "
-"Twig-Unterstützung durch Timber"
+"attentus WP a Bootstrap 5-based starter theme for the boilerplate attentus "
+"WP with support for Twig, Timber, environments, PHP Composer, and more."
 msgstr ""
-"Ein WordPress Boilerplate basierend auf Bedrock mit PHP Composer und mit "
-"Twig-Unterstützung durch Timber"
+"attentus WP ist ein Boilerplate basierend auf Bootstrap 5 mit Unterstützung "
+"für Twig Template Engine, Timber, Umgebungsvariablen, Paketmanager mit PHP "
+"Composer und mehr."
 
 #. Author of the plugin/theme
 msgid "attentus / Kolja Nolte"
@@ -179,3 +185,13 @@ msgstr "attentus / Kolja Nolte"
 #. Author URI of the plugin/theme
 msgid "mailto:nolte@attentus.com"
 msgstr "mailto:nolte@attentus.com"
+
+#~ msgid "attentus"
+#~ msgstr "attentus"
+
+#~ msgid ""
+#~ "Ein WordPress Boilerplate basierend auf Bedrock mit PHP Composer und mit "
+#~ "Twig-Unterstützung durch Timber"
+#~ msgstr ""
+#~ "Ein WordPress Boilerplate basierend auf Bedrock mit PHP Composer und mit "
+#~ "Twig-Unterstützung durch Timber"
