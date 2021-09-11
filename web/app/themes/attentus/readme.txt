@@ -2,7 +2,7 @@
 Contributors:       thaikolja
 Requires at least:  5.0
 Tested up to:       5.8
-Requires PHP:       7.2
+Requires PHP:       7.4
 License:            GPLv3 or later
 License URI:        http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,11 +12,21 @@ attentus WP a starter theme based on Bootstrap 5 for the boilerplate attentus WP
 
 == Changelog ==
 
+= 1.0.1 =
+
+* Added new Twig functions
+* Added new Twig filters
+* Removed rarely used Bootstrap 5 SCSS modules by default
+
 = 1.0.0 =
 
 * First version
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+
+New Twig functions and filters and a performance boost by commenting out rarely used Bootstrap 5 modules.
 
 = 1.0.0 =
 
