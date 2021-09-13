@@ -32,4 +32,4 @@ Please direct your questions, feature requests and bug findings at [GitLab's iss
 
 ## License
 
-See *LICENSE.md*.
+See *LICENSE.md*!
