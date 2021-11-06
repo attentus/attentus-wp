@@ -29,7 +29,7 @@
   "require": {
     "composer/installers": "^1.6",
     "oscarotero/env": "dev-master",
-    "php": ">=8",
+    "php": "*",
     "ext-json": "*",
     "roots/bedrock-autoloader": "^1.0",
     "roots/soil": "^4",
@@ -80,7 +80,10 @@
   },
   "scripts": {
     "post-update-cmd": [
-      "php ./scripts/post-install.php"
+      "@php ./scripts/post-install.php"
+    ],
+    "post-root-package-install": [
+      "@php ./scripts/post-install.php"
     ]
   }
 }
