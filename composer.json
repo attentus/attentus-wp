@@ -79,11 +79,8 @@
     "wordpress-install-dir": "web/wp"
   },
   "scripts": {
-    "post-update-cmd": [
-      "@php ./scripts/post-install.php"
-    ],
-    "post-root-package-install": [
-      "@php ./scripts/post-install.php"
+    "post-install-cmd": [
+      "php ./scripts/copy-env-file.php"
     ]
   }
 }
