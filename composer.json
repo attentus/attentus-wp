@@ -1,86 +1,89 @@
 {
-  "name": "attentus/attentus-wp",
-  "type": "project",
-  "license": "GPL-3.0-or-later",
-  "version": "1.0.1",
-  "description": "attentus WP is a Bedrock-based boilerplate for WordPress with modern development tools, easier configuration, and an improved folder structure.",
-  "homepage": "https://www.attentus.com/attentus-wp/",
-  "authors": [
-    {
-      "name": "Kolja Nolte",
-      "email": "nolte@attentus.com",
-      "homepage": "https://www.attentus.com"
-    }
+  "name":              "attentus/attentus-wp",
+  "type":              "project",
+  "license":           "GPL-3.0-or-later",
+  "version":           "1.0.2",
+  "description":       "attentus WP is a Bedrock-based boilerplate for WordPress with modern development tools, easier configuration, and an improved folder structure.",
+  "homepage":          "https://www.attentus.com/attentus-wp/",
+  "authors":           [
+	{
+	  "name":     "Kolja Nolte",
+	  "email":    "nolte@attentus.com",
+	  "homepage": "https://www.attentus.com"
+	}
   ],
-  "support": {
-    "issues": "https://gitlab.com/attentus/intern/attentus-wp/-/issues",
-    "wiki": "https://gitlab.com/attentus/intern/attentus-wp/-/wikis/home"
+  "support":           {
+	"issues": "https://gitlab.com/attentus/intern/attentus-wp/-/issues",
+	"wiki":   "https://gitlab.com/attentus/intern/attentus-wp/-/wikis/home"
   },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org",
-      "only": [
-        "wpackagist-plugin/*",
-        "wpackagist-theme/*"
-      ]
-    }
+  "repositories":      [
+	{
+	  "type": "composer",
+	  "url":  "https://wpackagist.org",
+	  "only": [
+		"wpackagist-plugin/*",
+		"wpackagist-theme/*"
+	  ]
+	}
   ],
-  "require": {
-    "composer/installers": "^1.6",
-    "oscarotero/env": "dev-master",
-    "php": "*",
-    "ext-json": "*",
-    "roots/bedrock-autoloader": "^1.0",
-    "roots/soil": "^4",
-    "roots/wordpress": "^5",
-    "roots/wp-config": "^1.0",
-    "roots/wp-password-bcrypt": "^1.0",
-    "timber/timber": "^2",
-    "vlucas/phpdotenv": "^5",
-    "twbs/bootstrap": "^5",
-    "wordpress-premium/advanced-custom-fields-pro": "^5",
-    "wordpress-premium/font-awesome-pro": "^6",
-    "wordpress-premium/wpseo-premium": "^16",
-    "wpackagist-plugin/wordpress-seo": "^16",
-    "wpackagist-plugin/jigsaw": "0.9.*",
-    "upstatement/routes": "^0",
-    "twig/cache-extra": "^3.3",
-    "adhocore/env": "^0.1.0"
+  "require":           {
+	"composer/installers":                          "^1.6",
+	"oscarotero/env":                               "dev-master",
+	"php":                                          "^8.0 | ^8.1",
+	"ext-json":                                     "*",
+	"roots/bedrock-autoloader":                     "^1.0",
+	"roots/soil":                                   "^4",
+	"roots/wordpress":                              "^5",
+	"roots/wp-config":                              "^1.0",
+	"roots/wp-password-bcrypt":                     "^1.0",
+	"timber/timber":                                "^2",
+	"vlucas/phpdotenv":                             "^5",
+	"twbs/bootstrap":                               "^5",
+	"wordpress-premium/advanced-custom-fields-pro": "^5",
+	"wordpress-premium/font-awesome-pro":           "^6",
+	"wpackagist-plugin/wordpress-seo":              "^16",
+	"wpackagist-plugin/jigsaw":                     "0.9.*",
+	"upstatement/routes":                           "^0",
+	"twig/cache-extra":                             "^3.3",
+	"adhocore/env":                                 "^0.1.0"
   },
-  "require-dev": {
-    "roave/security-advisories": "dev-latest",
-    "wpackagist-plugin/theme-check": "dev-trunk",
-    "wpackagist-plugin/debug-bar": "dev-trunk",
-    "kint-php/kint": "dev-master",
-    "phpmd/phpmd": "^2.10"
+  "require-dev":       {
+	"roave/security-advisories":     "dev-latest",
+	"wpackagist-plugin/theme-check": "dev-trunk",
+	"wpackagist-plugin/debug-bar":   "dev-trunk",
+	"kint-php/kint":                 "dev-master",
+	"phpmd/phpmd":                   "^2.10"
   },
-  "config": {
-    "optimize-autoloader": true,
-    "preferred-install": "dist"
+  "config":            {
+	"optimize-autoloader": true,
+	"preferred-install":   "dist",
+	"allow-plugins":       {
+	  "roots/wordpress-core-installer": true,
+	  "composer/installers":            true
+	}
   },
   "minimum-stability": "dev",
-  "prefer-stable": true,
-  "extra": {
-    "installer-paths": {
-      "web/app/mu-plugins/{$name}/": [
-        "type:wordpress-muplugin",
-        "roots/soil",
-        "wordpress-premium/advanced-custom-fields-pro",
-        "wpackagist-plugin/jigsaw"
-      ],
-      "web/app/plugins/{$name}/": [
-        "type:wordpress-plugin"
-      ],
-      "web/app/themes/{$name}/": [
-        "type:wordpress-theme"
-      ]
-    },
-    "wordpress-install-dir": "web/wp"
+  "prefer-stable":     true,
+  "extra":             {
+	"installer-paths":       {
+	  "web/app/mu-plugins/{$name}/": [
+		"type:wordpress-muplugin",
+		"roots/soil",
+		"wordpress-premium/advanced-custom-fields-pro",
+		"wpackagist-plugin/jigsaw"
+	  ],
+	  "web/app/plugins/{$name}/":    [
+		"type:wordpress-plugin"
+	  ],
+	  "web/app/themes/{$name}/":     [
+		"type:wordpress-theme"
+	  ]
+	},
+	"wordpress-install-dir": "web/wp"
   },
-  "scripts": {
-    "post-install-cmd": [
-      "php ./scripts/copy-env-file.php"
-    ]
+  "scripts":           {
+	"post-install-cmd": [
+	  "cp -n ./.env.example ./.env"
+	]
   }
 }
