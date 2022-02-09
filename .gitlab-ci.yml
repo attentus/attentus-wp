@@ -3,10 +3,14 @@
 # Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/#customizing-settings
 # Note that environment variables can be set in several places
 # See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
+#before_script:
+#    - pip install requests
+
 stages:
-  - test
-sast:
-  stage: test
-include:
-  - template: Security/SAST.gitlab-ci.yml
-  - template: Dependency-Scanning.gitlab-ci.yml
+    - composercheck
+
+check-for-composer:
+    stage: composercheck
+    image: curlimages/curl:latest
+    script:
+        - composer -v
