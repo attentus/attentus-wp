@@ -32,7 +32,6 @@ class Twig extends Timber\Twig {
 		add_filter( 'timber/post/classmap', [ $this, 'class_map_post' ] );
 		add_filter( 'timber/user/classmap', [ $this, 'class_map_user' ] );
 		add_filter( 'timber/term/classmap', [ $this, 'class_map_term' ] );
-		add_filter( 'timber/twig/environment/options', [ $this, 'set_twig_options' ] );
 	}
 
 	/**
@@ -40,7 +39,7 @@ class Twig extends Timber\Twig {
 	 *
 	 * @return array
 	 */
-	public function set_twig_options( array $options ): array {
+	public function setTwigOptions( array $options ): array {
 		$options['cache'] = false;
 
 		if ( WP_ENV === 'production' ){
@@ -85,6 +84,10 @@ class Twig extends Timber\Twig {
 	public function add_to_context( array $context ): array {
 		$context['site']     = new Site();
 		$context['ajax_url'] = get_admin_url( 0, 'admin-ajax.php' );
+		$context['menus']    = [
+			'header' => Timber::get_menu( 'header' ),
+			'footer' => Timber::get_menu( 'footer' )
+		];
 
 		return $context;
 	}
@@ -92,9 +95,9 @@ class Twig extends Timber\Twig {
 	/**
 	 * @param string $json
 	 *
-	 * @return array
 	 * @throws \JsonException
 	 *
+	 * @return array
 	 * @since 0.0.1
 	 */
 	public function twig_filter_json_decode( string $json ): array {
@@ -115,6 +118,8 @@ class Twig extends Timber\Twig {
 	}
 
 	/**
+	 * Adds filters that can be used in Twig.
+	 *
 	 * @param $twig
 	 *
 	 * @return mixed
@@ -135,6 +140,13 @@ class Twig extends Timber\Twig {
 		return $twig;
 	}
 
+	/**
+	 * Adds functions that can be used in Twig.
+	 *
+	 * @param $twig
+	 *
+	 * @return object
+	 */
 	public function add_twig_functions( $twig ): object {
 		$twig->addFunction(
 			new TwigFunction( 'env', [ $this, 'twig_function_env' ] )
@@ -164,7 +176,15 @@ class Twig extends Timber\Twig {
 			new TwigFunction( 'meta', [ $this, 'twig_function_meta' ] )
 		);
 
+		$twig->addFunction(
+			new TwigFunction( 'option', [ $this, 'twig_function_option' ] )
+		);
+
 		return $twig;
+	}
+
+	public function twig_function_option( string $option ) {
+		return get_option( $option );
 	}
 
 	/**
