@@ -105,7 +105,7 @@ class Site extends Timber\Site {
 	/**
 	 * @since 0.0.1
 	 */
-	public function admin_notices() {
+	public function admin_notices():void {
 		$site_public_status = get_option( 'blog_public' );
 
 		if ( ! $site_public_status ){
@@ -137,6 +137,7 @@ class Site extends Timber\Site {
 			_x( 'Registered', 'Date of user registration', TEXTDOMAIN ),
 			function ( $user_id ) {
 				$user = Timber::get_user( $user_id );
+				d(new \WP_User(1));
 				$time = mktime( $user->user_registered_ );
 				$date = date(
 					'j. M Y, H:i',

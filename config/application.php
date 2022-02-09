@@ -11,7 +11,9 @@
  * @package attentus WP
  * @author  Kolja Nolte <nolte@attentus.com>
  */
+require_once '../vendor/autoload.php';
 
+use Dotenv\Dotenv;
 use Roots\WPConfig\Config;
 use function Env\env;
 
@@ -32,7 +34,7 @@ $webroot_dir = $root_dir . '/web';
 /**
  * Use Dotenv to set required environment variables and load .env file in root
  */
-$dotenv = Dotenv\Dotenv::createUnsafeImmutable( $root_dir );
+$dotenv = Dotenv::createUnsafeImmutable( $root_dir );
 if ( file_exists( $root_dir . '/.env' ) ){
 	$dotenv->load();
 	$dotenv->required( [ 'WP_HOME', 'WP_SITEURL' ] );

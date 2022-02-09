@@ -29,7 +29,7 @@
   "require": {
     "composer/installers": "^1.6",
     "oscarotero/env": "dev-master",
-    "php": ">=7.4",
+    "php": "*",
     "ext-json": "*",
     "roots/bedrock-autoloader": "^1.0",
     "roots/soil": "^4",
@@ -44,13 +44,16 @@
     "wordpress-premium/wpseo-premium": "^16",
     "wpackagist-plugin/wordpress-seo": "^16",
     "wpackagist-plugin/jigsaw": "0.9.*",
-    "upstatement/routes": "^0"
+    "upstatement/routes": "^0",
+    "twig/cache-extra": "^3.3",
+    "adhocore/env": "^0.1.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "wpackagist-plugin/theme-check": "dev-trunk",
     "wpackagist-plugin/debug-bar": "dev-trunk",
-    "kint-php/kint": "dev-master"
+    "kint-php/kint": "dev-master",
+    "phpmd/phpmd": "^2.10"
   },
   "config": {
     "optimize-autoloader": true,
@@ -77,13 +80,7 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "python3 ./scripts/post-install.py"
-    ],
-    "post-update-cmd": [
-      "python3 ./scripts/post-update.py"
-    ],
-    "post-root-package-install": [
-      "python3 ./scripts/post-install.py"
+      "php ./scripts/copy-env-file.php"
     ]
   }
 }
