@@ -6,13 +6,11 @@
 #before_script:
 #    - pip install requests
 
-image: composer:1
-
 stages:
     - composercheck
 
 check-for-composer:
     stage: composercheck
-    image: curlimages/curl:latest
+    image: composer:latest
     script:
         - composer -v
