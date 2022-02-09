@@ -6,7 +6,7 @@
 #before_script:
 #    - pip install requests
 
-image: composer
+image: composer:1
 
 stages:
     - composercheck
